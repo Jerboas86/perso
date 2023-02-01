@@ -33,14 +33,14 @@
 
 	<main>
 		<div class="experiences">
-			<h2>MISSIONS</h2>
+			<h2>EXPERIENCES</h2>
 			<div class="job">
-				<h3>Audika, Lyon</h3>
+				<h3>Audika, Lyon (remplacement)</h3>
 				<p>Audioprothésiste D.E</p>
 				<p class="date">septembre 2022- décembre 2022</p>
 			</div>
 			<div class="job">
-				<h3>Audika, Bourg En Bresse</h3>
+				<h3>Audika, Bourg En Bresse (remplacement)</h3>
 				<p>Audioprothésiste D.E</p>
 				<p class="date">mars 2022- août 2022</p>
 			</div>
