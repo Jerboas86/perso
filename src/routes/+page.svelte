@@ -67,7 +67,7 @@
 		<div class="formations">
 			<h2>FORMATIONS</h2>
 			<div class="certif">
-				<h3>Audiologie de l'enfant, Paris - D.U</h3>
+				<h3>Audiophonologie et Otologie de l’enfant, Paris - D.U</h3>
 				<p class="date">2017-2018</p>
 			</div>
 			<div class="certif">
@@ -117,13 +117,6 @@
 			</div>
 		</div>
 
-		<div class="progs">
-			<h2>LANGUAGES</h2>
-			<div class="prog">
-				<p>Typescript - Javascript - Rust - Python</p>
-			</div>
-		</div>
-
 		<div class="skills">
 			<h2>COMPETENCES</h2>
 			<div class="skill">
@@ -146,6 +139,13 @@
 			</div>
 			<div class="skill">
 				<p>Programmation audio</p>
+			</div>
+		</div>
+
+		<div class="progs">
+			<h2>LANGUAGES</h2>
+			<div class="prog">
+				<p>Typescript - Javascript - Rust - Python</p>
 			</div>
 		</div>
 
