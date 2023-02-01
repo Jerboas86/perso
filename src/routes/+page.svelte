@@ -273,6 +273,7 @@
 	@media screen and (max-width: 1000px) {
 		.body {
 			flex-direction: column;
+			background-color: white;
 		}
 
 		main {
