@@ -7,7 +7,7 @@
 <div class="body">
 	<header>
 		<h1>Benoit Delemps</h1>
-		<div>
+		<div class="jobList">
 			<h2>Opticien /</h2>
 			<h2>Audioprothésiste /</h2>
 			<h2>Développeur</h2>
@@ -15,15 +15,15 @@
 		<div class="personalInfos">
 			<h3>Infos Personelles</h3>
 			<div class="infos">
-				<a href="mailto:benoitdelemps@protonmail.com">
+				<a class="info" href="mailto:benoitdelemps@protonmail.com">
 					<Mail />
 					<p>benoitdelemps@protonmail.com</p>
 				</a>
-				<a href="www.linkedin.com/in/benoit-delemps/">
+				<a class="info" href="www.linkedin.com/in/benoit-delemps/">
 					<LinkedIn />
 					<p>www.linkedin.com/in/benoit-delemps/</p>
 				</a>
-				<a href="github.com/Jerboas86">
+				<a class="info" href="github.com/Jerboas86">
 					<Github />
 					<p>github.com/Jerboas86</p>
 				</a>
@@ -198,6 +198,11 @@
 		margin-bottom: 1rem;
 	}
 
+	.jobList {
+		display: flex;
+		flex-direction: column;
+	}
+
 	header {
 		min-width: 450px;
 		display: flex;
@@ -263,5 +268,46 @@
 	.asso > a,
 	.pub > a {
 		color: #6f0325;
+	}
+
+	@media screen and (max-width: 1000px) {
+		.body {
+			flex-direction: column;
+		}
+
+		main {
+			padding-top: 0;
+		}
+
+		.jobList {
+			flex-direction: row;
+		}
+
+		.jobList > h2 {
+			font-size: 18px;
+		}
+
+		.personalInfos {
+			margin-top: 0.5rem;
+		}
+
+		.personalInfos > h3 {
+			display: none;
+		}
+
+		.infos {
+			flex-direction: row;
+			gap: 1rem;
+		}
+
+		.info > p {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		.jobList > h2 {
+			font-size: 16px;
+		}
 	}
 </style>
