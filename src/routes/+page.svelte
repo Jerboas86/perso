@@ -32,55 +32,129 @@
 	</header>
 
 	<main>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum sed sint doloribus eum rerum
-		tempora? Deleniti aliquam totam excepturi minus, eligendi quas magnam, delectus dicta magni
-		praesentium, culpa architecto vero? Ex nemo eum dicta. Tempora, voluptas laboriosam quis totam
-		quisquam odit enim, nihil modi iste provident natus dolore, eos commodi beatae quia impedit
-		incidunt similique voluptate deleniti omnis architecto hic. Nihil voluptatibus fugit cum ipsa!
-		Veritatis nemo repudiandae et tempora minima voluptates pariatur, eligendi quasi temporibus
-		ducimus suscipit ea praesentium voluptatum in porro dolorem rem! Temporibus aliquam quis cumque
-		magnam! Odio iusto aliquam error dicta fuga, amet, quos sint asperiores eveniet eligendi
-		pariatur sunt labore modi alias earum culpa, repudiandae cumque quae mollitia at quaerat neque
-		adipisci voluptate? Iusto, fugiat. Officiis deserunt perferendis, magni natus consequatur rerum
-		vitae blanditiis alias! Animi ipsa magni nihil a in doloremque beatae assumenda repudiandae,
-		incidunt consequuntur minus. Laboriosam sed eaque nulla. Asperiores, natus quaerat? Quae nostrum
-		aliquid quo corporis, ducimus libero amet expedita alias dolores facilis repudiandae
-		perferendis, nesciunt obcaecati ipsam harum reprehenderit sint accusamus provident assumenda
-		beatae, at error? Impedit dicta commodi porro. Quod, maxime nisi? Ex reiciendis error totam sint
-		esse, exercitationem sunt commodi provident. Ad veritatis distinctio explicabo reprehenderit
-		quibusdam ducimus, ullam fugiat nostrum, maxime architecto suscipit consequatur eaque quidem
-		animi. Iusto vitae aspernatur laudantium repudiandae iure, dolor eligendi? Molestias veniam
-		impedit ducimus facere nisi doloribus, culpa qui, distinctio laboriosam voluptatum aliquid quam,
-		aut itaque totam dolor iste deserunt odit autem. Itaque ratione excepturi suscipit atque
-		doloremque reprehenderit. Dolores, impedit! Officiis, doloribus aperiam? Quos odio illum
-		architecto! Aut asperiores cumque dicta ipsam consequatur facere, laborum a unde saepe mollitia
-		laudantium architecto. Maxime earum id ipsa molestiae quibusdam corrupti quidem fugit cumque
-		sint neque! Omnis ratione assumenda eligendi explicabo, quo dolore accusantium possimus sapiente
-		blanditiis! Praesentium sequi, assumenda odio placeat aut numquam? Quaerat distinctio suscipit
-		facilis maxime quia in doloribus pariatur, asperiores dolore expedita. Temporibus suscipit,
-		veniam nesciunt tempora cum beatae odit unde voluptatum, odio aspernatur ipsam rerum doloribus
-		architecto ex? Porro! Culpa dignissimos officiis eos voluptates nisi impedit, consequuntur quos?
-		Voluptates hic modi fugiat mollitia. Quos adipisci voluptatem sit laboriosam, illum alias
-		explicabo dignissimos commodi nemo incidunt quaerat suscipit reprehenderit perspiciatis? Beatae
-		nostrum atque similique ipsam possimus perferendis ipsa quia reprehenderit necessitatibus modi
-		ut consectetur veritatis inventore, enim vero dolores voluptatem maiores rem dolor ex odio, eum
-		optio nobis natus! Officiis. Eligendi distinctio rerum ad sunt eos quia tempore, enim dolorem a
-		recusandae expedita dignissimos corrupti optio, laborum veniam illum quidem culpa sint,
-		laboriosam ab nam dicta dolorum asperiores. Rerum, optio! Veniam atque exercitationem natus
-		necessitatibus aperiam commodi in, id culpa expedita incidunt corporis deleniti placeat cumque
-		dolor totam fugit eligendi rerum impedit, velit repellendus ipsa? Mollitia consequatur dolorum
-		tempora sapiente! Iste obcaecati corporis earum nulla! Rem voluptate facilis at molestiae vero
-		qui veniam, soluta nesciunt rerum ullam maxime dicta voluptates minima culpa repellat incidunt
-		suscipit, a temporibus placeat modi porro. Harum enim quos distinctio, aliquid repudiandae
-		dolorem atque. Modi temporibus ipsa ad cupiditate quam laborum error nostrum sequi impedit unde
-		ab veritatis quod, libero porro? Deleniti alias voluptas modi harum. Deleniti, doloremque eos.
-		Ut est debitis nemo veritatis eos mollitia et ex! Obcaecati, delectus nihil dolor nemo corrupti
-		velit impedit sint repellendus soluta asperiores laboriosam amet iusto rem in cum. Fugiat
-		eligendi explicabo molestiae quae deserunt aspernatur necessitatibus ipsa sed id deleniti
-		blanditiis repellendus voluptatibus alias asperiores, at laudantium numquam quo facilis voluptas
-		distinctio quisquam architecto! Cumque explicabo a minus. Soluta quis enim ducimus esse
-		quibusdam consequatur veniam autem in et corporis molestiae commodi ut eaque dolore ab hic
-		laboriosam neque libero amet velit, blanditiis aliquid. Atque suscipit provident dignissimos?
+		<div class="experiences">
+			<h2>EXPERIENCES</h2>
+			<div class="job">
+				<h3>Audika, Lyon</h3>
+				<p>Audioprothésiste D.E</p>
+				<p class="date">septembre 2022- décembre 2022</p>
+			</div>
+			<div class="job">
+				<h3>Audika, Bourg En Bresse</h3>
+				<p>Audioprothésiste D.E</p>
+				<p class="date">mars 2022- août 2022</p>
+			</div>
+			<div class="epoch">
+				<div class="job">
+					<h3>Audika, Dijon</h3>
+					<p>Audioprothésiste D.E</p>
+					<p class="date">2013-2018</p>
+				</div>
+				<div class="job">
+					<h3>CHU service ORL, Dijon</h3>
+					<p>Assitant recherche clinique</p>
+					<p class="date">2015-2018</p>
+				</div>
+			</div>
+
+			<div class="job">
+				<h3>Alain Afflelou, Vénisseux</h3>
+				<p>opticien optométriste</p>
+				<p class="date">2009-2010</p>
+			</div>
+		</div>
+
+		<div class="formations">
+			<h2>FORMATIONS</h2>
+			<div class="certif">
+				<h3>Audiologie de l'enfant, Paris - D.U</h3>
+				<p class="date">2017-2018</p>
+			</div>
+			<div class="certif">
+				<h3>Audiologie avancée, Lyon - D.U</h3>
+				<p class="date">2015-2016</p>
+			</div>
+			<div class="certif">
+				<h3>Audioprothèse, Lyon - D.E</h3>
+				<p class="date">2010-2013</p>
+			</div>
+			<div class="certif">
+				<h3>Optométrie-Contactologie, Saint-Etienne - License</h3>
+				<p class="date">2009-2010</p>
+			</div>
+			<div class="certif">
+				<h3>Opticien-lunetier - B.T.S</h3>
+				<p class="date">2007-2009</p>
+			</div>
+		</div>
+
+		<div class="publications">
+			<h2>PUBLICATIONS & RECOMPENSES</h2>
+			<div class="pub">
+				<h3>Effect of rotating auditory scene on postural [...] or bilateral cochlear implants.</h3>
+				<a href="https://pubmed.ncbi.nlm.nih.gov/30505289/">Front. Neurol., 2018</a>
+			</div>
+			<div class="pub">
+				<h3>Prix de la meilleur présentation, 2014 (C.N.A)</h3>
+				<a
+					href="https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/"
+					>Ouie magazine</a
+				>
+			</div>
+		</div>
+
+		<div class="associations">
+			<h2>ASSOCIATION & PROJET</h2>
+			<div class="asso">
+				<h3>F.N.E.A</h3>
+				<p>Cofondateur et membre honoraire</p>
+				<a href="https://www.fnea.org">www.fnea.org</a>
+			</div>
+			<div class="asso">
+				<h3>Astrone</h3>
+				<p>Système audiométrique avancé</p>
+				<a href="https://www.gimmicl.app">www.astrone.app</a>
+			</div>
+		</div>
+
+		<div class="progs">
+			<h2>LANGUAGES</h2>
+			<div class="prog">
+				<p>Typescript - Javascript - Rust - Python</p>
+			</div>
+		</div>
+
+		<div class="skills">
+			<h2>COMPETENCES</h2>
+			<div class="skill">
+				<p>Appareillage de l'adulte & de l'enfant</p>
+			</div>
+			<div class="skill">
+				<p>Prise en charge des patients acouphèniques</p>
+			</div>
+			<div class="skill">
+				<p>Web full stack</p>
+			</div>
+			<div class="skill">
+				<p>Architecture AWS</p>
+			</div>
+			<div class="skill">
+				<p>Data visualisation</p>
+			</div>
+			<div class="skill">
+				<p>Biostatistiques</p>
+			</div>
+			<div class="skill">
+				<p>Programmation audio</p>
+			</div>
+		</div>
+
+		<div class="langs">
+			<h2>LANGUES</h2>
+			<div class="lang">
+				<p>Anglais courant</p>
+			</div>
+		</div>
 	</main>
 </div>
 
@@ -89,11 +163,39 @@
 		display: flex;
 		gap: 3rem;
 		height: 100%;
+		background-color: #f9f9f9;
 	}
 
 	header,
 	main {
 		padding: 2rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.experiences,
+	.formations,
+	.publications,
+	.associations,
+	.progs,
+	.skills,
+	.langs {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.experiences > h2,
+	.formations > h2,
+	.publications > h2,
+	.associations > h2,
+	.progs > h2,
+	.skills > h2,
+	.langs > h2 {
+		font-weight: 800;
+		color: #c5003e;
+		margin-bottom: 1rem;
 	}
 
 	header {
@@ -117,16 +219,49 @@
 	}
 
 	a {
-		color: white;
 		text-decoration: none;
+	}
+
+	.infos > a {
+		color: white;
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+	}
+
+	.job > h3,
+	.certif > h3 {
+		margin-bottom: 0.25em;
+	}
+
+	a > p {
+		transition: transform 200ms ease-in-out;
+	}
+
+	.date {
+		color: grey;
+		font-style: italic;
+		font-size: 0.8em;
+		margin-top: 0.25em;
+	}
+
+	a:hover > p {
+		transform: scale(1.05);
 	}
 
 	.infos {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+	}
+
+	.epoch {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.asso > a,
+	.pub > a {
+		color: #6f0325;
 	}
 </style>

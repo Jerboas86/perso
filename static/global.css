@@ -24,11 +24,6 @@ ul {
 	font-weight: normal;
 }
 
-body {
-	height: 100vh;
-	height: 100dvh;
-}
-
 ol,
 ul {
 	list-style: none;
