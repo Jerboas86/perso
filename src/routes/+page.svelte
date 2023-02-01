@@ -19,11 +19,11 @@
 					<Mail />
 					<p>benoitdelemps@protonmail.com</p>
 				</a>
-				<a class="info" href="www.linkedin.com/in/benoit-delemps/">
+				<a class="info" href="https://www.linkedin.com/in/benoit-delemps/">
 					<LinkedIn />
 					<p>www.linkedin.com/in/benoit-delemps/</p>
 				</a>
-				<a class="info" href="github.com/Jerboas86">
+				<a class="info" href="https://github.com/Jerboas86">
 					<Github />
 					<p>github.com/Jerboas86</p>
 				</a>
@@ -33,7 +33,7 @@
 
 	<main>
 		<div class="experiences">
-			<h2>EXPERIENCES</h2>
+			<h2>MISSIONS</h2>
 			<div class="job">
 				<h3>Audika, Lyon</h3>
 				<p>Audioprothésiste D.E</p>
@@ -113,7 +113,7 @@
 			<div class="asso">
 				<h3>Astrone</h3>
 				<p>Système audiométrique avancé</p>
-				<a href="https://www.gimmicl.app">www.astrone.app</a>
+				<a href="https://www.gimmick.app">www.astrone.app</a>
 			</div>
 		</div>
 
