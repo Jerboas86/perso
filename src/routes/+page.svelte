@@ -159,11 +159,18 @@
 </div>
 
 <style>
+	:root {
+		--accent-100: #016487;
+		--accent-200: #012e3e;
+		--bg: #f9f9f9;
+		--light-text: white;
+	}
+
 	.body {
 		display: flex;
 		gap: 3rem;
 		height: 100%;
-		background-color: #f9f9f9;
+		background-color: var(--bg);
 	}
 
 	header,
@@ -194,7 +201,7 @@
 	.skills > h2,
 	.langs > h2 {
 		font-weight: 800;
-		color: #c5003e;
+		color: var(--accent-100);
 		margin-bottom: 1rem;
 	}
 
@@ -208,8 +215,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		background-color: #c5003e;
-		color: white;
+		background-color: var(--accent-100);
+		color: var(--light-text);
 	}
 
 	.personalInfos {
@@ -228,7 +235,7 @@
 	}
 
 	.infos > a {
-		color: white;
+		color: var(--light-text);
 		display: flex;
 		align-items: center;
 		gap: 1rem;
@@ -267,7 +274,7 @@
 
 	.asso > a,
 	.pub > a {
-		color: #6f0325;
+		color: var(--accent-200);
 	}
 
 	@media screen and (max-width: 1000px) {
