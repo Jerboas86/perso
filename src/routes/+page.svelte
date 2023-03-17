@@ -1,4 +1,5 @@
 <script>
+	import Phone from '$lib/Phone.svelte';
 	import Github from '../lib/Github.svelte';
 	import LinkedIn from '../lib/LinkedIn.svelte';
 	import Mail from '../lib/Mail.svelte';
@@ -15,6 +16,11 @@
 		<div class="personalInfos">
 			<h3>Infos Personelles</h3>
 			<div class="infos">
+				<div class="info">
+					<Phone />
+					<p>06-65-50-72-46</p>
+				</div>
+
 				<a class="info" href="mailto:benoitdelemps@protonmail.com">
 					<Mail />
 					<p>benoitdelemps@protonmail.com</p>
@@ -234,6 +240,12 @@
 		text-decoration: none;
 	}
 
+	.info {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
 	.infos > a {
 		color: var(--light-text);
 		display: flex;
@@ -316,6 +328,16 @@
 	@media screen and (max-width: 400px) {
 		.jobList > h2 {
 			font-size: 16px;
+		}
+	}
+
+	@media print {
+		header {
+			display: none;
+		}
+
+		.associations {
+			margin-top: 100px;
 		}
 	}
 </style>
