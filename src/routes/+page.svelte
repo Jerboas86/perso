@@ -57,6 +57,11 @@
 					<p class="date">2013-2018</p>
 				</div>
 				<div class="job">
+					<h3>Audika, Paris</h3>
+					<p>Membre du comité scientifique d'Audika</p>
+					<p class="date">2013-2018</p>
+				</div>
+				<div class="job">
 					<h3>CHU service ORL, Dijon</h3>
 					<p>Assitant recherche clinique</p>
 					<p class="date">2015-2018</p>
