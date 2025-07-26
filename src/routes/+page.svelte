@@ -9,8 +9,8 @@
 	<header>
 		<h1>Benoit Delemps</h1>
 		<div class="jobList">
-			<h2>Opticien /</h2>
-			<h2>Audioprothésiste /</h2>
+			<h2 class="slash">Opticien</h2>
+			<h2 class="slash">Audioprothésiste</h2>
 			<h2>Développeur</h2>
 		</div>
 		<div class="personalInfos">
@@ -20,7 +20,6 @@
 					<Phone />
 					<p>06-65-50-72-46</p>
 				</div>
-
 				<a class="info" href="mailto:benoitdelemps@protonmail.com">
 					<Mail />
 					<p>benoitdelemps@protonmail.com</p>
@@ -223,6 +222,14 @@
 		gap: 1rem;
 	}
 
+	.skills {
+		gap: 0rem;
+	}
+
+	.skills p {
+		margin: 0.75em;
+	}
+
 	.experiences > h2,
 	.formations > h2,
 	.publications > h2,
@@ -238,6 +245,10 @@
 	.jobList {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.jobList > h2 {
+		margin: 0.5rem;
 	}
 
 	header {
@@ -277,6 +288,10 @@
 		gap: 1rem;
 	}
 
+	.infos p {
+		margin: 0.75em;
+	}
+
 	.job > h3,
 	.certif > h3 {
 		margin-bottom: 0.25em;
@@ -300,7 +315,6 @@
 	.infos {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
 	}
 
 	.epoch {
@@ -329,6 +343,7 @@
 
 		.jobList > h2 {
 			font-size: 18px;
+			margin: 0;
 		}
 
 		.personalInfos {
@@ -346,6 +361,10 @@
 
 		.info > p {
 			display: none;
+		}
+
+		.slash::after {
+			content: '/';
 		}
 	}
 
