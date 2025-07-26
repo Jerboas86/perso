@@ -27,7 +27,11 @@
 				</a>
 				<a class="info" href="https://www.linkedin.com/in/benoit-delemps/">
 					<LinkedIn />
-					<p>www.linkedin.com/in/benoit-delemps/</p>
+					<p>Profil</p>
+				</a>
+				<a class="info" href="https://www.linkedin.com/company/astrone-app/">
+					<LinkedIn />
+					<p>Page Astrone</p>
 				</a>
 				<a class="info" href="https://github.com/Jerboas86">
 					<Github />
@@ -40,6 +44,11 @@
 	<main>
 		<div class="experiences">
 			<h2>EXPERIENCES</h2>
+			<div class="job">
+				<h3>Astrone, Lyon</h3>
+				<p>CEO</p>
+				<p class="date">janvier 2023</p>
+			</div>
 			<div class="job">
 				<h3>Audika, Lyon (remplacement)</h3>
 				<p>Audioprothésiste D.E</p>
@@ -102,6 +111,19 @@
 		<div class="publications">
 			<h2>PUBLICATIONS & RECOMPENSES</h2>
 			<div class="pub">
+				<h3>Astrone, la nouvelle plateforme d’audiométrie avancée</h3>
+				<a
+					href="https://audiologie-demain.com/astrone-la-nouvelle-plateforme-daudiometrie-avancee-2294"
+					>Audiologie demain, 2024</a
+				>
+			</div>
+			<div class="pub">
+				<h3>Astrone, dans le cœur du réacteur audiométrique</h3>
+				<a href="https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/"
+					>Ouie magazine, 2024</a
+				>
+			</div>
+			<div class="pub">
 				<h3>Effect of rotating auditory scene on postural [...] or bilateral cochlear implants.</h3>
 				<a href="https://pubmed.ncbi.nlm.nih.gov/30505289/">Front. Neurol., 2018</a>
 			</div>
@@ -109,7 +131,7 @@
 				<h3>Prix de la meilleur présentation, 2014 (C.N.A)</h3>
 				<a
 					href="https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/"
-					>Ouie magazine</a
+					>Ouie magazine, 2014</a
 				>
 			</div>
 		</div>
@@ -124,7 +146,7 @@
 			<div class="asso">
 				<h3>Astrone</h3>
 				<p>Système audiométrique avancé</p>
-				<a href="https://www.gimmick.app">www.astrone.app</a>
+				<a href="https://www.astrone.app">www.astrone.app</a>
 			</div>
 		</div>
 
@@ -137,19 +159,16 @@
 				<p>Prise en charge des patients acouphèniques</p>
 			</div>
 			<div class="skill">
-				<p>Web full stack</p>
+				<p>Développement web</p>
 			</div>
 			<div class="skill">
-				<p>Architecture AWS</p>
+				<p>Programmation audio</p>
 			</div>
 			<div class="skill">
 				<p>Data visualisation</p>
 			</div>
 			<div class="skill">
 				<p>Biostatistiques</p>
-			</div>
-			<div class="skill">
-				<p>Programmation audio</p>
 			</div>
 		</div>
 
@@ -171,7 +190,7 @@
 
 <style>
 	:root {
-		--accent-100: #016487;
+		--accent-100: #c60c30;
 		--accent-200: #012e3e;
 		--bg: #f9f9f9;
 		--light-text: white;
