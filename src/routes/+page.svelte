@@ -3,11 +3,28 @@
 	import Github from '../lib/Github.svelte';
 	import LinkedIn from '../lib/LinkedIn.svelte';
 	import Mail from '../lib/Mail.svelte';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		await import('@google/model-viewer');
+	});
 </script>
 
 <div class="body">
 	<header>
-		<h1>Benoit Delemps</h1>
+		<div class="name">
+			<model-viewer
+				alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+				src="/NeilArmstrong.glb"
+				poster="/NeilArmstrong.webp"
+				ar
+				shadow-intensity="1"
+				camera-controls
+				touch-action="pan-y"
+			></model-viewer>
+			<h1>Benoit Delemps</h1>
+		</div>
+
 		<div class="jobList">
 			<h2 class="slash">Opticien</h2>
 			<h2 class="slash">Audioprothésiste</h2>
@@ -193,6 +210,19 @@
 		--accent-200: #012e3e;
 		--bg: #f9f9f9;
 		--light-text: white;
+	}
+
+	.name {
+		display: flex;
+		align-items: end;
+	}
+
+	.name > h1 {
+		margin-bottom: 0.05em;
+	}
+
+	model-viewer {
+		width: 100px;
 	}
 
 	.body {
