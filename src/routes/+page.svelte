@@ -78,12 +78,7 @@
 			<div class="epoch">
 				<div class="job">
 					<h3>Audika, Dijon</h3>
-					<p>Audioprothésiste D.E</p>
-					<p class="date">2013-2018</p>
-				</div>
-				<div class="job">
-					<h3>Audika, Paris</h3>
-					<p>Membre du comité scientifique d'Audika</p>
+					<p>Audioprothésiste D.E / Membre du comité scientifique</p>
 					<p class="date">2013-2018</p>
 				</div>
 				<div class="job">
@@ -127,24 +122,54 @@
 		<div class="publications">
 			<h2>PUBLICATIONS & RECOMPENSES</h2>
 			<div class="pub">
-				<h3>Astrone, la nouvelle plateforme d’audiométrie avancée</h3>
+				<h3>
+					<a
+						href="https://web.archive.org/web/20240616085413mp_/https://wca2024paris.com/innovation-prize/"
+						>Participation au WCA innovation prize</a
+					>
+				</h3>
+				<a
+					href="https://web.archive.org/web/20240616085413mp_/https://wca2024paris.com/innovation-prize/"
+					>WCA, sept 2025</a
+				>
+			</div>
+			<div class="pub">
+				<h3>
+					<a
+						href="https://audiologie-demain.com/astrone-la-nouvelle-plateforme-daudiometrie-avancee-2294"
+						>Astrone, la nouvelle plateforme d’audiométrie avancée</a
+					>
+				</h3>
 				<a
 					href="https://audiologie-demain.com/astrone-la-nouvelle-plateforme-daudiometrie-avancee-2294"
 					>Audiologie demain, 2024</a
 				>
 			</div>
 			<div class="pub">
-				<h3>Astrone, dans le cœur du réacteur audiométrique</h3>
+				<h3>
+					<a href="https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/"
+						>Astrone, dans le cœur du réacteur audiométrique</a
+					>
+				</h3>
 				<a href="https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/"
 					>Ouie magazine, 2024</a
 				>
 			</div>
 			<div class="pub">
-				<h3>Effect of rotating auditory scene on postural [...] or bilateral cochlear implants.</h3>
+				<h3>
+					<a href="https://pubmed.ncbi.nlm.nih.gov/30505289/"
+						>Effect of rotating auditory scene on postural [...] or bilateral cochlear implants.</a
+					>
+				</h3>
 				<a href="https://pubmed.ncbi.nlm.nih.gov/30505289/">Front. Neurol., 2018</a>
 			</div>
 			<div class="pub">
-				<h3>Prix de la meilleur présentation, 2014 (C.N.A)</h3>
+				<h3>
+					<a
+						href="https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/"
+						>Prix de la meilleur présentation, 2014 (C.N.A)</a
+					>
+				</h3>
 				<a
 					href="https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/"
 					>Ouie magazine, 2014</a
@@ -257,7 +282,11 @@
 	}
 
 	.skills p {
-		margin: 0.75em;
+		margin: 0.75em 0;
+	}
+
+	.publications a {
+		color: var(--accent-200);
 	}
 
 	.experiences > h2,
