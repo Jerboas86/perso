@@ -313,7 +313,6 @@
 	}
 
 	header {
-		min-width: 450px;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
