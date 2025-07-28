@@ -10,7 +10,7 @@
 	});
 </script>
 
-<div class="body">
+<div class="main-container">
 	<header>
 		<div class="name">
 			<model-viewer
@@ -251,8 +251,9 @@
 		width: 100px;
 	}
 
-	.body {
-		display: flex;
+	.main-container {
+		display: grid;
+		grid-template-columns: auto 1fr;
 		gap: 3rem;
 		height: 100%;
 		background-color: var(--bg);
@@ -388,8 +389,9 @@
 	}
 
 	@media screen and (max-width: 1000px) {
-		.body {
-			flex-direction: column;
+		.main-container {
+			display: grid;
+			grid-template-columns: 1fr;
 			background-color: white;
 		}
 
