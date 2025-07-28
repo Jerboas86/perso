@@ -20,6 +20,7 @@
 				ar
 				shadow-intensity="1"
 				camera-controls
+				disable-zoom
 				touch-action="pan-y"
 			></model-viewer>
 			<h1>Benoit Delemps</h1>
