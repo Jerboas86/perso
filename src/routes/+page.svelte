@@ -436,8 +436,32 @@
 	}
 
 	@media print {
-		header {
+		.main-container {
+			display: grid;
+			grid-template-columns: 1fr;
+			background-color: white;
+		}
+
+		header,
+		.infos > a {
+			color: black;
+		}
+
+		.personalInfos {
 			display: none;
+		}
+
+		.jobList {
+			flex-direction: row;
+		}
+
+		.jobList > h2 {
+			font-size: 18px;
+			margin: 0;
+		}
+
+		.slash::after {
+			content: '/';
 		}
 
 		.associations {
