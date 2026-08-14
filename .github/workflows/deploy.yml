@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - run: pnpm exec playwright install --with-deps chromium
+
+      # Markdown/JSON/DOCX/ODT/RTF/TXT first, so `vite build` copies them into
+      # the site; the PDFs are then rendered from the built site itself.
+      - run: pnpm run export:docs
+      - run: pnpm run build
+      - run: pnpm run export:pdf
+
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config ./wrangler.jsonc
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-exports
+          path: static/exports/

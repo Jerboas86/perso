@@ -27,6 +27,13 @@ export default ts.config(
 		}
 	},
 	{
+		// The resume links are either external URLs coming from content/*.md or
+		// paths to the generated export files — neither is a SvelteKit route that
+		// resolve() knows about.
+		files: ['src/lib/Cv.svelte'],
+		rules: { 'svelte/no-navigation-without-resolve': 'off' }
+	},
+	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parserOptions: {

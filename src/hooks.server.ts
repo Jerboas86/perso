@@ -1,13 +1,8 @@
 import type { Handle } from '@sveltejs/kit';
-import { paraglideMiddleware } from '$lib/paraglide/server';
 
-const handleParaglide: Handle = ({ event, resolve }) =>
-	paraglideMiddleware(event.request, ({ request, locale }) => {
-		event.request = request;
-
-		return resolve(event, {
-			transformPageChunk: ({ html }) => html.replace('%paraglide.lang%', locale)
-		});
+/** `/en` is the English resume, everything else is the French one. */
+export const handle: Handle = ({ event, resolve }) =>
+	resolve(event, {
+		transformPageChunk: ({ html }) =>
+			html.replace('%lang%', event.url.pathname.startsWith('/en') ? 'en' : 'fr')
 	});
-
-export const handle: Handle = handleParaglide;

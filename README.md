@@ -1,38 +1,43 @@
-# sv
+# CV
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+My resume, from one source of truth, in every format a recruiter might ask for.
 
-## Creating a project
+## Source of truth
 
-If you're seeing this, you've probably already done this step. Congrats!
+Everything lives in `content/cv.fr.md` and `content/cv.en.md` — YAML frontmatter for the
+structured data, an optional markdown body for a free-prose summary. Edit those files and
+nothing else; the website and every export are generated from them.
 
-```sh
-# create a new project in the current directory
-npx sv create
+The shape is validated by `src/lib/resume/schema.ts` (zod), so a typo fails the build with the
+offending field path instead of silently dropping a section.
 
-# create a new project in my-app
-npx sv create my-app
+## Outputs
+
+| Output                       | Produced by                                               |
+| ---------------------------- | --------------------------------------------------------- |
+| Website                      | SvelteKit, prerendered — `/` (French), `/en` (English)    |
+| `.md`                        | `src/lib/resume/markdown.ts`                              |
+| `.json`                      | the validated data object                                 |
+| `.docx` `.odt` `.rtf` `.txt` | pandoc, from the generated markdown                       |
+| `.pdf`                       | Playwright printing the built site's own print stylesheet |
+
+Downloads are served from `/exports/cv-<locale>.<ext>` and linked in the page header.
+
+## Commands
+
+```bash
+pnpm dev            # website only, no exports
+pnpm export         # export:docs → build → export:pdf; writes static/exports/
+pnpm run local:test # unit + e2e (run `pnpm export` first — e2e checks the downloads)
 ```
 
-## Developing
+`pnpm export` needs **pandoc** on PATH and a Playwright chromium install.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Deployment
 
-```sh
-npm run dev
+Pushing to `master` runs `.github/workflows/deploy.yml`, which regenerates every format and
+deploys the Worker — so the published files can never drift from `content/`. It needs the
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repository secrets.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Pull requests run `.github/workflows/ci.yml`: lint, typecheck, unit tests, a full export (which
+doubles as the content validation gate) and the e2e suite.

@@ -1,13 +1,19 @@
-import { page } from 'vitest/browser';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';
-import Page from './+page.svelte';
+import Cv from '$lib/Cv.svelte';
+import { getResume } from '$lib/resume/app.ts';
 
-describe('/+page.svelte', () => {
-	it('should render h1', async () => {
-		render(Page);
+describe('Cv', () => {
+	it('renders content from the source of truth', async () => {
+		const resume = getResume('fr');
+		const page = await render(Cv, { resume });
 
-		const heading = page.getByRole('heading', { level: 1 });
-		await expect.element(heading).toBeInTheDocument();
+		await expect
+			.element(page.getByRole('heading', { level: 1 }))
+			.toHaveTextContent(resume.basics.name);
+		const firstJob = resume.experiences[0];
+		if ('org' in firstJob) {
+			await expect.element(page.getByText(firstJob.role, { exact: true }).first()).toBeVisible();
+		}
 	});
 });

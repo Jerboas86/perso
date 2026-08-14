@@ -9,7 +9,17 @@ const config = {
 	compilerOptions: {
 		runes: true
 	},
-	kit: { adapter: adapter() }
+	kit: {
+		adapter: adapter(),
+		prerender: {
+			// The PDF exports are generated from the built site, so they cannot
+			// exist while the crawler is walking it. Every other 404 still fails.
+			handleHttpError: ({ path, message }) => {
+				if (path.startsWith('/exports/')) return;
+				throw new Error(message);
+			}
+		}
+	}
 };
 
 export default config;
