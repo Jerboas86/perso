@@ -450,17 +450,17 @@
 
 		/* Compact the layout so the resume lands on two pages instead of four. */
 		:global(html) {
-			font-size: 12px;
+			font-size: 11.5px;
 		}
 
 		header {
-			padding: 0.6rem 1rem;
-			gap: 0.4rem;
+			padding: 0.5rem 1rem;
+			gap: 0.3rem;
 		}
 
 		main {
-			padding: 0.6rem 0;
-			gap: 0.7rem;
+			padding: 0.5rem 0;
+			gap: 0.55rem;
 		}
 
 		.experiences,
@@ -528,6 +528,13 @@
 		.certif,
 		.pub,
 		.asso {
+			break-inside: avoid;
+		}
+
+		/* Keep a section whole rather than leaving one entry stranded at the top
+		   of the next page. FORMATIONS is the one that straddles the break, and
+		   the spacing above is tuned so it still fits on page 1. */
+		.formations {
 			break-inside: avoid;
 		}
 	}
