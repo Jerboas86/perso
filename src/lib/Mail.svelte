@@ -1,10 +1,10 @@
 <svg
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
-	width="30px"
-	height="30px"
+	width="16px"
+	height="16px"
 	viewBox="0 0 1000 1000"
-	style="fill:#ffffff"
+	style="fill:currentColor"
 >
 	<g
 		><g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)"

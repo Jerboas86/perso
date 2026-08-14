@@ -1,8 +1,8 @@
 <svg
 	class="phone"
 	viewBox="0 0 700 700"
-	width="30px"
-	height="30px"
+	width="16px"
+	height="16px"
 	xmlns="http://www.w3.org/2000/svg"
 >
 	<path
@@ -13,6 +13,6 @@
 
 <style>
 	.phone {
-		fill: white;
+		fill: currentColor;
 	}
 </style>

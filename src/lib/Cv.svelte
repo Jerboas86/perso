@@ -21,59 +21,62 @@
 	});
 </script>
 
-<div class="main-container">
+<div class="page">
 	<header>
-		<div class="name">
+		<div class="identity">
+			<div class="name">
+				<h1>{resume.basics.name}</h1>
+				<div class="jobList">
+					{#each resume.basics.titles as title, i (title)}
+						<h2 class:slash={i < resume.basics.titles.length - 1}>{title}</h2>
+					{/each}
+				</div>
+			</div>
 			<model-viewer
 				alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
 				src="/NeilArmstrong.glb"
 				poster="/NeilArmstrong.webp"
 				ar
-				shadow-intensity="1"
+				shadow-intensity="0"
 				camera-controls
 				disable-zoom
 				touch-action="pan-y"
 			></model-viewer>
-			<h1>{resume.basics.name}</h1>
 		</div>
 
-		<div class="jobList">
-			{#each resume.basics.titles as title, i (title)}
-				<h2 class:slash={i < resume.basics.titles.length - 1}>{title}</h2>
-			{/each}
-		</div>
-
-		<div class="personalInfos">
-			<h3>{t.personalInfos}</h3>
-			<div class="infos">
-				<div class="info">
-					<Phone />
-					<p>{resume.basics.phone}</p>
-				</div>
-				<a class="info" href="mailto:{resume.basics.email}">
-					<Mail />
-					<p>{resume.basics.email}</p>
-				</a>
-				{#each resume.basics.profiles as profile (profile.url)}
-					{@const Icon = icons[profile.network]}
-					<a class="info" href={profile.url}>
-						<Icon />
-						<p>{profile.label}</p>
+		<div class="meta">
+			<div class="personalInfos">
+				<h3>{t.personalInfos}</h3>
+				<div class="infos">
+					<div class="info">
+						<Phone />
+						<p>{resume.basics.phone}</p>
+					</div>
+					<a class="info" href="mailto:{resume.basics.email}">
+						<Mail />
+						<p>{resume.basics.email}</p>
 					</a>
-				{/each}
+					{#each resume.basics.profiles as profile (profile.url)}
+						{@const Icon = icons[profile.network]}
+						<a class="info" href={profile.url}>
+							<Icon />
+							<p>{profile.label}</p>
+						</a>
+					{/each}
+				</div>
 			</div>
-		</div>
 
-		<div class="downloads">
-			<h3>{t.downloads}</h3>
-			<div class="formats">
-				{#each EXPORT_FORMATS as format (format.extension)}
-					<a href={exportPath(resume.locale, format.extension)} download
-						>{format.extension.toUpperCase()}</a
-					>
-				{/each}
+			<div class="downloads">
+				<h3>{t.downloads}</h3>
+				<div class="formats">
+					{#each EXPORT_FORMATS as format (format.extension)}
+						<a href={exportPath(resume.locale, format.extension)} download
+							>{format.extension.toUpperCase()}</a
+						>
+					{/each}
+				</div>
+				<a class="localeSwitch" href={otherLocaleHref} hreflang={otherLocale}>{t.otherLocale}</a>
 			</div>
-			<a class="localeSwitch" href={otherLocaleHref} hreflang={otherLocale}>{t.otherLocale}</a>
 		</div>
 	</header>
 
@@ -82,446 +85,556 @@
 			<p class="summary">{resume.summary}</p>
 		{/if}
 
-		<div class="experiences">
+		<section class="experiences">
 			<h2>{t.experiences}</h2>
-			{#each resume.experiences as entry, i (i)}
-				{#if isGroup(entry)}
-					<div class="epoch">
-						{#each entry.group as job (job.org + job.date)}
-							<div class="job">
-								<h3>
-									{job.org}{job.city ? `, ${job.city}` : ''}{job.note ? ` (${job.note})` : ''}
-								</h3>
-								<p>{job.role}</p>
-								<p class="date">{job.date}</p>
-							</div>
-						{/each}
-					</div>
-				{:else}
-					<div class="job">
-						<h3>
-							{entry.org}{entry.city ? `, ${entry.city}` : ''}{entry.note ? ` (${entry.note})` : ''}
-						</h3>
-						<p>{entry.role}</p>
-						<p class="date">{entry.date}</p>
-					</div>
-				{/if}
-			{/each}
-		</div>
-
-		<div class="formations">
-			<h2>{t.formations}</h2>
-			{#each resume.formations as formation (formation.title)}
-				<div class="certif">
-					<h3>{formation.title}</h3>
-					<p class="date">{formation.date}</p>
-				</div>
-			{/each}
-		</div>
-
-		<div class="publications">
-			<h2>{t.publications}</h2>
-			{#each resume.publications as publication (publication.url)}
-				<div class="pub">
-					<h3><a href={publication.url}>{publication.title}</a></h3>
-					<a href={publication.url}>{publication.source}</a>
-				</div>
-			{/each}
-		</div>
-
-		<div class="associations">
-			<h2>{t.associations}</h2>
-			{#each resume.associations as association (association.name)}
-				<div class="asso">
-					<h3>{association.name}</h3>
-					<p>{association.role}</p>
-					<a href={association.url}>{association.url.replace(/^https?:\/\//, '')}</a>
-				</div>
-			{/each}
-		</div>
-
-		<div class="skills">
-			<h2>{t.skills}</h2>
-			{#each resume.skills as skill (skill)}
-				<div class="skill">
-					<p>{skill}</p>
-				</div>
-			{/each}
-		</div>
-
-		<div class="progs">
-			<h2>{t.programming}</h2>
-			<div class="prog">
-				<p>{resume.programming.join(' - ')}</p>
+			<div class="entries">
+				{#each resume.experiences as entry, i (i)}
+					{#if isGroup(entry)}
+						<div class="epoch">
+							{#each entry.group as job (job.org + job.date)}
+								<div class="job">
+									<h3>
+										{job.org}{job.city ? `, ${job.city}` : ''}{job.note ? ` (${job.note})` : ''}
+									</h3>
+									<p>{job.role}</p>
+									<p class="date">{job.date}</p>
+								</div>
+							{/each}
+						</div>
+					{:else}
+						<div class="job">
+							<h3>
+								{entry.org}{entry.city ? `, ${entry.city}` : ''}{entry.note
+									? ` (${entry.note})`
+									: ''}
+							</h3>
+							<p>{entry.role}</p>
+							<p class="date">{entry.date}</p>
+						</div>
+					{/if}
+				{/each}
 			</div>
-		</div>
+		</section>
 
-		<div class="langs">
+		<section class="formations">
+			<h2>{t.formations}</h2>
+			<div class="entries">
+				{#each resume.formations as formation (formation.title)}
+					<div class="certif">
+						<h3>{formation.title}</h3>
+						<p class="date">{formation.date}</p>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<section class="publications">
+			<h2>{t.publications}</h2>
+			<div class="entries">
+				{#each resume.publications as publication (publication.url)}
+					<div class="pub">
+						<h3><a href={publication.url}>{publication.title}</a></h3>
+						<a class="source" href={publication.url}>{publication.source}</a>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<section class="associations">
+			<h2>{t.associations}</h2>
+			<div class="entries">
+				{#each resume.associations as association (association.name)}
+					<div class="asso">
+						<h3>{association.name}</h3>
+						<p>{association.role}</p>
+						<a class="source" href={association.url}
+							>{association.url.replace(/^https?:\/\//, '')}</a
+						>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<section class="skills">
+			<h2>{t.skills}</h2>
+			<div class="entries">
+				{#each resume.skills as skill (skill)}
+					<p class="skill">{skill}</p>
+				{/each}
+			</div>
+		</section>
+
+		<section class="progs">
+			<h2>{t.programming}</h2>
+			<div class="entries">
+				<p class="prog">{resume.programming.join('  ·  ')}</p>
+			</div>
+		</section>
+
+		<section class="langs">
 			<h2>{t.languages}</h2>
-			{#each resume.languages as language (language)}
-				<div class="lang">
-					<p>{language}</p>
-				</div>
-			{/each}
-		</div>
+			<div class="entries">
+				{#each resume.languages as language (language)}
+					<p class="lang">{language}</p>
+				{/each}
+			</div>
+		</section>
 	</main>
 </div>
 
 <style>
+	/* StudioBlank — monochrome, flat, zero radius, whitespace as the design. */
 	:root {
-		--accent-100: #c60c30;
-		--accent-200: #012e3e;
-		--bg: #f9f9f9;
-		--light-text: white;
+		--ink: #0a0a0a;
+		--paper: #fafafa;
+		--surface: #ffffff;
+		--rule: #d4d4d8;
+		--hairline: #e5e5e5;
+		--muted: #71717a;
+
+		--space-1: 4px;
+		--space-2: 8px;
+		--space-3: 16px;
+		--space-4: 32px;
+		--space-5: 48px;
+		--space-6: 64px;
+		--space-8: 96px;
+		--space-10: 128px;
+
+		--font: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+		--mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 	}
 
-	.name {
-		display: flex;
-		align-items: end;
+	/* static/global.css is not linked from app.html, so the page-level reset
+	   lives here with the rest of the design. */
+	:global(body) {
+		margin: 0;
+		background-color: var(--paper);
 	}
 
-	.name > h1 {
-		margin-bottom: 0.05em;
+	:global(h1),
+	:global(h2),
+	:global(h3),
+	:global(p) {
+		margin: 0;
+		font-weight: inherit;
 	}
 
-	model-viewer {
-		width: 100px;
-	}
-
-	.main-container {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 3rem;
-		height: 100%;
-		background-color: var(--bg);
-	}
-
-	header,
-	main {
-		padding: 2rem 1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.summary {
-		max-width: 60ch;
-	}
-
-	.experiences,
-	.formations,
-	.publications,
-	.associations,
-	.progs,
-	.skills,
-	.langs {
+	.page {
+		font-family: var(--font);
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.65;
+		color: var(--ink);
+		background-color: var(--paper);
+		min-height: 100%;
+		padding: var(--space-8) var(--space-6);
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: var(--space-8);
 	}
 
-	.skills {
-		gap: 0rem;
-	}
-
-	.skills p {
-		margin: 0.75em 0;
-	}
-
-	.publications a {
-		color: var(--accent-200);
-	}
-
-	.experiences > h2,
-	.formations > h2,
-	.publications > h2,
-	.associations > h2,
-	.progs > h2,
-	.skills > h2,
-	.langs > h2 {
-		font-weight: 800;
-		color: var(--accent-100);
-		margin-bottom: 1rem;
-	}
-
-	.jobList {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.jobList > h2 {
-		margin: 0.5rem;
-	}
+	/* ---------- header ---------- */
 
 	header {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
-		background-color: var(--accent-100);
-		color: var(--light-text);
+		gap: var(--space-6);
+		max-width: 1120px;
 	}
 
-	.personalInfos {
+	.identity {
 		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin-top: 2rem;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: var(--space-4);
 	}
 
-	.personalInfos > h3 {
-		font-weight: 800;
+	h1 {
+		font-size: 64px;
+		font-weight: 700;
+		line-height: 1.05;
+		letter-spacing: -0.02em;
 	}
 
+	.jobList {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+		margin-top: var(--space-3);
+	}
+
+	.jobList > h2 {
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 1.3;
+		color: var(--muted);
+	}
+
+	.slash::after {
+		content: '/';
+		margin-left: var(--space-3);
+		color: var(--rule);
+	}
+
+	model-viewer {
+		width: 96px;
+		height: 96px;
+		flex: none;
+		background-color: transparent;
+	}
+
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-6);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--rule);
+	}
+
+	.personalInfos,
 	.downloads {
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: var(--space-3);
 	}
 
-	.downloads > h3 {
-		font-weight: 800;
+	.meta h3 {
+		font-family: var(--mono);
+		font-size: 12px;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--muted);
 	}
 
-	.formats {
+	.infos {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem;
-	}
-
-	.formats > a {
-		color: var(--light-text);
-		border: 1px solid var(--light-text);
-		border-radius: 4px;
-		padding: 0.15rem 0.5rem;
-		font-size: 0.75rem;
-		letter-spacing: 0.05em;
-		transition: background-color 200ms ease-in-out;
-	}
-
-	.formats > a:hover {
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-
-	.localeSwitch {
-		color: var(--light-text);
-		font-size: 0.9rem;
-		text-decoration: underline;
-	}
-
-	a {
-		text-decoration: none;
+		column-gap: var(--space-4);
+		row-gap: var(--space-2);
 	}
 
 	.info {
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: var(--space-2);
+		color: var(--ink);
 	}
 
-	.infos > a {
-		color: var(--light-text);
+	.info p {
+		font-size: 14px;
+	}
+
+	a.info:hover p {
+		text-decoration: underline;
+	}
+
+	.formats {
 		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+
+	/* Secondary button: 1px ink border, inverts on hover. No radius, no shadow. */
+	.formats > a {
+		display: inline-flex;
 		align-items: center;
-		gap: 1rem;
+		justify-content: center;
+		min-width: 64px;
+		height: 32px;
+		padding: 0 var(--space-3);
+		border: 1px solid var(--ink);
+		font-family: var(--mono);
+		font-size: 12px;
+		letter-spacing: 0.05em;
+		color: var(--ink);
+		transition:
+			background-color 150ms linear,
+			color 150ms linear;
 	}
 
-	.infos p {
-		margin: 0.75em;
+	.formats > a:hover {
+		background-color: var(--ink);
+		color: var(--paper);
 	}
 
-	.job > h3,
-	.certif > h3 {
-		margin-bottom: 0.25em;
+	.localeSwitch {
+		align-self: flex-start;
+		font-size: 14px;
+		border-bottom: 1px solid var(--ink);
+		color: var(--ink);
 	}
 
-	a > p {
-		transition: transform 200ms ease-in-out;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	:global(a:focus-visible),
+	:global(button:focus-visible) {
+		outline: 2px solid var(--ink);
+		outline-offset: 2px;
+	}
+
+	/* ---------- body ---------- */
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
+		max-width: 1120px;
+	}
+
+	.summary {
+		max-width: 60ch;
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	/* Editorial two-column rhythm: the section label sits in the left margin,
+	   the content column stays a comfortable measure wide. */
+	section {
+		display: grid;
+		grid-template-columns: 200px minmax(0, 1fr);
+		gap: var(--space-4);
+		padding-top: var(--space-4);
+		border-top: 1px solid var(--hairline);
+	}
+
+	section > h2 {
+		font-family: var(--mono);
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 1.5;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--muted);
+	}
+
+	.entries {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		max-width: 72ch;
+	}
+
+	h3 {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+
+	.job p,
+	.certif p,
+	.asso p {
+		font-size: 16px;
+		font-weight: 300;
 	}
 
 	.date {
-		color: grey;
-		font-style: italic;
-		font-size: 0.8em;
-		margin-top: 0.25em;
-	}
-
-	a:hover > p {
-		transform: scale(1.05);
-	}
-
-	.infos {
-		display: flex;
-		flex-direction: column;
+		font-family: var(--mono);
+		font-size: 13px;
+		color: var(--muted);
+		margin-top: var(--space-1);
 	}
 
 	.epoch {
 		display: flex;
-		gap: 2rem;
+		flex-wrap: wrap;
+		gap: var(--space-4) var(--space-6);
 	}
 
-	.asso > a,
-	.pub > a {
-		color: var(--accent-200);
+	.source {
+		font-size: 14px;
+		color: var(--muted);
+		border-bottom: 1px solid var(--rule);
+		align-self: flex-start;
 	}
+
+	.source:hover,
+	.pub h3 a:hover {
+		color: var(--ink);
+		border-bottom-color: var(--ink);
+	}
+
+	.pub h3 a {
+		border-bottom: 1px solid transparent;
+	}
+
+	.skills .entries,
+	.langs .entries {
+		gap: var(--space-2);
+	}
+
+	.skill,
+	.lang,
+	.prog {
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	/* ---------- responsive ---------- */
 
 	@media screen and (max-width: 1000px) {
-		.main-container {
-			display: grid;
-			grid-template-columns: 1fr;
-			background-color: white;
+		.page {
+			padding: var(--space-5) var(--space-4);
+			gap: var(--space-6);
 		}
 
-		main {
-			padding-top: 0;
-		}
-
-		.jobList {
-			flex-direction: row;
+		h1 {
+			font-size: 40px;
+			line-height: 1.1;
 		}
 
 		.jobList > h2 {
-			font-size: 18px;
-			margin: 0;
+			font-size: 16px;
 		}
 
-		.personalInfos {
-			margin-top: 0.5rem;
+		section {
+			grid-template-columns: 1fr;
+			gap: var(--space-3);
 		}
 
-		.personalInfos > h3 {
-			display: none;
-		}
-
+		/* Full width now, so contact labels stay readable instead of collapsing
+		   to bare icons the way the old narrow sidebar needed. */
 		.infos {
-			flex-direction: row;
-			gap: 1rem;
-		}
-
-		.info > p {
-			display: none;
-		}
-
-		.slash::after {
-			content: '/';
+			flex-direction: column;
+			row-gap: var(--space-2);
 		}
 	}
 
 	@media screen and (max-width: 400px) {
+		h1 {
+			font-size: 32px;
+		}
+
 		.jobList > h2 {
-			font-size: 16px;
+			font-size: 14px;
+		}
+
+		model-viewer {
+			display: none;
 		}
 	}
 
+	/* ---------- print / PDF ---------- */
+
 	@media print {
-		.main-container {
-			display: grid;
-			grid-template-columns: 1fr;
-			background-color: white;
+		/* Compact the layout so the resume lands on two pages. */
+		:global(html) {
+			font-size: 11.5px;
 		}
 
-		/* Backgrounds are printed, so the header keeps its red banner and the
-		   text on it stays white — forcing it black made it unreadable. */
+		/* printBackground paints the body too, which would band the short last
+		   page in grey below where the content ends. */
+		:global(body) {
+			background-color: var(--surface);
+		}
 
-		/* Contact details must survive into the PDF/print export — only the
-		   download links, the language switch and the 3D widget are screen-only.
-		   Hiding model-viewer also keeps the PDF deterministic in size: whether
-		   its canvas had painted yet used to change the output by ~500 kB. */
+		.page {
+			background-color: var(--surface);
+			padding: 0;
+			gap: var(--space-4);
+			font-size: 11.5px;
+			line-height: 1.45;
+		}
+
+		/* Screen-only chrome. Hiding model-viewer also keeps the PDF
+		   deterministic in size: whether its canvas had painted yet used to
+		   change the output by ~500 kB. */
 		.downloads,
 		model-viewer {
 			display: none;
 		}
 
-		.personalInfos {
-			margin-top: 0.5rem;
+		header {
+			gap: var(--space-3);
+			max-width: none;
+		}
+
+		h1 {
+			font-size: 32px;
 		}
 
 		.jobList {
-			flex-direction: row;
+			margin-top: var(--space-1);
+			gap: var(--space-2);
 		}
 
 		.jobList > h2 {
-			font-size: 18px;
-			margin: 0;
+			font-size: 14px;
 		}
 
 		.slash::after {
-			content: '/';
+			margin-left: var(--space-2);
 		}
 
-		/* Compact the layout so the resume lands on two pages instead of four. */
-		:global(html) {
-			font-size: 11.5px;
+		.meta {
+			padding-top: var(--space-2);
+			gap: var(--space-3);
 		}
 
-		header {
-			padding: 0.5rem 1rem;
-			gap: 0.3rem;
+		.infos {
+			column-gap: var(--space-4);
+			row-gap: 0;
+		}
+
+		.info p {
+			font-size: 11px;
 		}
 
 		main {
-			padding: 0.5rem 0;
-			gap: 0.55rem;
+			gap: var(--space-3);
+			max-width: none;
 		}
 
-		.experiences,
-		.formations,
-		.publications,
-		.associations,
-		.progs,
-		.skills,
-		.langs {
-			gap: 0.3rem;
+		section {
+			grid-template-columns: 150px minmax(0, 1fr);
+			gap: var(--space-3);
+			padding-top: var(--space-3);
 		}
 
-		.experiences > h2,
-		.formations > h2,
-		.publications > h2,
-		.associations > h2,
-		.progs > h2,
-		.skills > h2,
-		.langs > h2 {
-			margin-bottom: 0.2rem;
+		section > h2 {
+			font-size: 11px;
 		}
 
-		/* Two columns: the skill list is short lines, one per row wastes a third
-		   of a page. */
-		.skills {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			column-gap: 2rem;
+		.entries {
+			gap: var(--space-3);
+			max-width: none;
 		}
 
-		.skills > h2 {
-			grid-column: 1 / -1;
+		h3 {
+			font-size: 13px;
+			line-height: 1.35;
 		}
 
-		.skills p {
-			margin: 0.15em 0;
-		}
-
-		.personalInfos {
-			gap: 0.25rem;
-			margin-top: 0.25rem;
-		}
-
-		/* Contacts run across the banner instead of down it. */
-		.infos {
-			flex-direction: row;
-			flex-wrap: wrap;
-			column-gap: 1.25rem;
-		}
-
-		.infos p {
-			margin: 0.15em;
-		}
-
-		.job > h3,
-		.certif > h3 {
-			margin-bottom: 0.1em;
+		.job p,
+		.certif p,
+		.asso p,
+		.skill,
+		.lang,
+		.prog,
+		.summary {
+			font-size: 11.5px;
+			line-height: 1.45;
 		}
 
 		.date {
-			margin-top: 0.1em;
+			font-size: 10px;
+			margin-top: var(--space-1);
+		}
+
+		.epoch {
+			gap: var(--space-2) var(--space-4);
+		}
+
+		/* The skill list is short lines; one per row wastes a third of a page. */
+		.skills .entries {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: var(--space-4);
+			row-gap: 0;
 		}
 
 		.job,
@@ -532,8 +645,7 @@
 		}
 
 		/* Keep a section whole rather than leaving one entry stranded at the top
-		   of the next page. FORMATIONS is the one that straddles the break, and
-		   the spacing above is tuned so it still fits on page 1. */
+		   of the next page. FORMATIONS is the one that straddles the break. */
 		.formations {
 			break-inside: avoid;
 		}
