@@ -450,17 +450,17 @@
 
 		/* Compact the layout so the resume lands on two pages instead of four. */
 		:global(html) {
-			font-size: 13px;
+			font-size: 12px;
 		}
 
 		header {
-			padding: 0.75rem 1rem;
-			gap: 0.5rem;
+			padding: 0.6rem 1rem;
+			gap: 0.4rem;
 		}
 
 		main {
-			padding: 0.75rem 0;
-			gap: 0.9rem;
+			padding: 0.6rem 0;
+			gap: 0.7rem;
 		}
 
 		.experiences,
@@ -470,7 +470,7 @@
 		.progs,
 		.skills,
 		.langs {
-			gap: 0.4rem;
+			gap: 0.3rem;
 		}
 
 		.experiences > h2,
@@ -480,19 +480,48 @@
 		.progs > h2,
 		.skills > h2,
 		.langs > h2 {
-			margin-bottom: 0.3rem;
+			margin-bottom: 0.2rem;
+		}
+
+		/* Two columns: the skill list is short lines, one per row wastes a third
+		   of a page. */
+		.skills {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 2rem;
+		}
+
+		.skills > h2 {
+			grid-column: 1 / -1;
 		}
 
 		.skills p {
-			margin: 0.2em 0;
+			margin: 0.15em 0;
 		}
 
 		.personalInfos {
 			gap: 0.25rem;
+			margin-top: 0.25rem;
+		}
+
+		/* Contacts run across the banner instead of down it. */
+		.infos {
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 1.25rem;
 		}
 
 		.infos p {
-			margin: 0.2em;
+			margin: 0.15em;
+		}
+
+		.job > h3,
+		.certif > h3 {
+			margin-bottom: 0.1em;
+		}
+
+		.date {
+			margin-top: 0.1em;
 		}
 
 		.job,
