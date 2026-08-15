@@ -103,6 +103,10 @@ associations:
     role: Format pour corpus de matériel vocal
     description: Spécification d'un format de corpus vocal versionné, traçable et vérifiable (manifeste, métadonnées par échantillon, champs d'intégrité et de signature, métriques acoustiques reproductibles), en réponse à la multiplication des corpus générés par IA.
     url: 'https://github.com/Jerboas86/voxa'
+  - name: Genlexis
+    role: Générateur de listes lexicales
+    description: "Chaîne de production de matériel vocal de haute qualité, combinant l'IA comme juge et le jugement humain : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d'entrer dans le corpus, d'où sont tirées les listes."
+    url: 'https://github.com/Jerboas86/genlexis'
   - name: F.N.E.A
     role: Cofondateur (2013), secrétaire puis membre honoraire
     url: 'https://www.fnea.org'

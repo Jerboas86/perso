@@ -103,6 +103,10 @@ associations:
     role: Speech corpus format
     description: A specification for versioned, traceable and verifiable speech corpora (corpus manifest, per-sample metadata, integrity and signature fields, reproducible acoustic metrics), answering the proliferation of AI-generated corpora.
     url: 'https://github.com/Jerboas86/voxa'
+  - name: Genlexis
+    role: Lexicon list generator
+    description: 'A pipeline for producing high-quality speech material, combining AI-as-a-judge with human judgement: every generated sentence is assessed for correctness, plausibility and appropriateness before entering the corpus, from which the lists are drawn.'
+    url: 'https://github.com/Jerboas86/genlexis'
   - name: F.N.E.A
     role: Cofounder (2013), secretary then honorary member
     url: 'https://www.fnea.org'
