@@ -6,19 +6,20 @@
 	import { labels } from '$lib/resume/labels.ts';
 	import { EXPORT_FORMATS, exportPath } from '$lib/resume/exports.ts';
 	import { isGroup, type Resume } from '$lib/resume/schema.ts';
-	import { onMount } from 'svelte';
+	import type { Locale } from '$lib/resume/schema.ts';
 
 	let { resume }: { resume: Resume } = $props();
 
 	const t = $derived(labels[resume.locale]);
-	const otherLocale = $derived(resume.locale === 'fr' ? 'en' : 'fr');
-	const otherLocaleHref = $derived(resume.locale === 'fr' ? '/en' : '/');
 
 	const icons = { linkedin: LinkedIn, github: Github, website: Mail };
 
-	onMount(async () => {
-		await import('@google/model-viewer');
-	});
+	const localeHrefs: Record<Locale, string> = { fr: '/', en: '/en' };
+
+	function onLocaleChange(event: Event & { currentTarget: HTMLSelectElement }) {
+		const locale = event.currentTarget.value as Locale;
+		window.location.href = localeHrefs[locale];
+	}
 </script>
 
 <div class="page">
@@ -32,16 +33,10 @@
 					{/each}
 				</div>
 			</div>
-			<model-viewer
-				alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-				src="/NeilArmstrong.glb"
-				poster="/NeilArmstrong.webp"
-				ar
-				shadow-intensity="0"
-				camera-controls
-				disable-zoom
-				touch-action="pan-y"
-			></model-viewer>
+			<select class="localeSelect" value={resume.locale} onchange={onLocaleChange}>
+				<option value="fr">Français</option>
+				<option value="en">English</option>
+			</select>
 		</div>
 
 		<div class="meta">
@@ -75,7 +70,6 @@
 						>
 					{/each}
 				</div>
-				<a class="localeSwitch" href={otherLocaleHref} hreflang={otherLocale}>{t.otherLocale}</a>
 			</div>
 		</div>
 	</header>
@@ -277,11 +271,17 @@
 		color: var(--rule);
 	}
 
-	model-viewer {
-		width: 96px;
-		height: 96px;
+	.localeSelect {
 		flex: none;
-		background-color: transparent;
+		align-self: flex-end;
+		height: 32px;
+		padding: 0 var(--space-2);
+		border: 1px solid var(--ink);
+		background-color: var(--paper);
+		font-family: var(--mono);
+		font-size: 12px;
+		letter-spacing: 0.05em;
+		color: var(--ink);
 	}
 
 	.meta {
@@ -357,13 +357,6 @@
 	.formats > a:hover {
 		background-color: var(--ink);
 		color: var(--paper);
-	}
-
-	.localeSwitch {
-		align-self: flex-start;
-		font-size: 14px;
-		border-bottom: 1px solid var(--ink);
-		color: var(--ink);
 	}
 
 	a {
@@ -482,6 +475,14 @@
 			gap: var(--space-6);
 		}
 
+		.identity {
+			align-items: flex-start;
+		}
+
+		.localeSelect {
+			align-self: flex-start;
+		}
+
 		h1 {
 			font-size: 40px;
 			line-height: 1.1;
@@ -512,10 +513,6 @@
 		.jobList > h2 {
 			font-size: 14px;
 		}
-
-		model-viewer {
-			display: none;
-		}
 	}
 
 	/* ---------- print / PDF ---------- */
@@ -540,11 +537,9 @@
 			line-height: 1.45;
 		}
 
-		/* Screen-only chrome. Hiding model-viewer also keeps the PDF
-		   deterministic in size: whether its canvas had painted yet used to
-		   change the output by ~500 kB. */
+		/* Screen-only chrome. */
 		.downloads,
-		model-viewer {
+		.localeSelect {
 			display: none;
 		}
 

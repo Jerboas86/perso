@@ -85,7 +85,7 @@ associations:
     role: Plateforme d'évaluation pour modèles de synthèse vocale
     url: 'https://www.audarena.app'
   - name: Voxa
-    role: Format pour corpus de matériel vocal  
+    role: Format pour corpus de matériel vocal
     url: 'https://github.com/Jerboas86/voxa'
 
 skills:
