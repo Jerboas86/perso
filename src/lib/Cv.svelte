@@ -147,7 +147,7 @@
 			</div>
 		</section>
 
-		<section class="publications">
+		<section class="publications" use:reveal>
 			<h2>{t.publications}</h2>
 			<div class="entries">
 				{#each resume.publications as publication (publication.url)}
