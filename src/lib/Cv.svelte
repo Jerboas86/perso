@@ -235,6 +235,8 @@
 		flex-direction: column;
 		gap: var(--space-6);
 		max-width: 1120px;
+		width: 100%;
+		margin: 0 auto;
 	}
 
 	.identity {
@@ -377,6 +379,8 @@
 		flex-direction: column;
 		gap: var(--space-6);
 		max-width: 1120px;
+		width: 100%;
+		margin: 0 auto;
 	}
 
 	.summary {
