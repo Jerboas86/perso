@@ -22,3 +22,22 @@ export function getResume(locale: Locale): Resume {
 	if (!resume) throw new Error(`No content file found for locale '${locale}'`);
 	return resume;
 }
+
+/**
+ * The page payload: same resume, minus the phone number and email address.
+ *
+ * Those two are stripped from the HTML entirely — they would otherwise sit in
+ * the prerendered markup for any address harvester to scrape. They travel
+ * instead as an opaque blob that only client-side JS decodes, and only the
+ * print stylesheet reveals, so the generated PDF (rendered from this very page)
+ * still carries them. The other exports read `content/` directly and are
+ * unaffected.
+ */
+export function getPageData(locale: Locale): { resume: Resume; contacts: string } {
+	const { basics, ...rest } = getResume(locale);
+	const { phone, email, ...publicBasics } = basics;
+	return {
+		resume: { ...rest, basics: { ...publicBasics, phone: '', email: '' } },
+		contacts: btoa(JSON.stringify({ phone, email }))
+	};
+}

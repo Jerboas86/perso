@@ -1,3 +1,3 @@
-import { getResume } from '$lib/resume/app.ts';
+import { getPageData } from '$lib/resume/app.ts';
 
-export const load = () => ({ resume: getResume('en') });
+export const load = () => getPageData('en');

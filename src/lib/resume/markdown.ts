@@ -6,7 +6,9 @@ const escapePipes = (value: string) => value.replace(/\|/g, '\\|');
 function jobLine(job: Job): string {
 	const org = [job.org, job.city].filter(Boolean).join(', ');
 	const head = job.note ? `${org} (${job.note})` : org;
-	return `- **${head}** — ${job.role}  \n  *${job.date}*`;
+	const lines = [`- **${head}** — ${job.role}  \n  *${job.date}*`];
+	for (const highlight of job.highlights ?? []) lines.push(`  - ${highlight}`);
+	return lines.join('\n');
 }
 
 /**
@@ -46,8 +48,17 @@ export function toMarkdown(resume: Resume): string {
 	for (const p of resume.publications) out.push(`- [${p.title}](${p.url}) — *${p.source}*`);
 	out.push('');
 
+	if (resume.media.length) {
+		out.push(`## ${t.media}`, '');
+		for (const m of resume.media) out.push(`- [${m.title}](${m.url}) — *${m.source}*`);
+		out.push('');
+	}
+
 	out.push(`## ${t.associations}`, '');
-	for (const a of resume.associations) out.push(`- **${a.name}** — ${a.role} — <${a.url}>`);
+	for (const a of resume.associations) {
+		out.push(`- **${a.name}** — ${a.role} — <${a.url}>`);
+		if (a.description) out.push(`  - ${a.description}`);
+	}
 	out.push('');
 
 	out.push(`## ${t.skills}`, '');

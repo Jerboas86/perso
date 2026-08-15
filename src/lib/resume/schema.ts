@@ -22,7 +22,9 @@ const jobSchema = z.object({
 	city: z.string().optional(),
 	note: z.string().optional(),
 	role: z.string().min(1),
-	date: z.string().min(1)
+	date: z.string().min(1),
+	/** What was actually done there — one bullet per line. */
+	highlights: z.array(z.string().min(1)).optional()
 });
 
 /**
@@ -45,6 +47,7 @@ const publicationSchema = z.object({
 const associationSchema = z.object({
 	name: z.string().min(1),
 	role: z.string().min(1),
+	description: z.string().min(1).optional(),
 	url: z.url()
 });
 
@@ -53,7 +56,10 @@ export const resumeSchema = z.object({
 	basics: basicsSchema,
 	experiences: z.array(experienceSchema).min(1),
 	formations: z.array(formationSchema),
+	/** Peer-reviewed work and awards — kept apart from press coverage. */
 	publications: z.array(publicationSchema),
+	/** Press coverage. Same shape, but it is not a scientific record. */
+	media: z.array(publicationSchema).default([]),
 	associations: z.array(associationSchema),
 	skills: z.array(z.string().min(1)),
 	programming: z.array(z.string().min(1)),

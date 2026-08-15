@@ -6,12 +6,22 @@
 	import Cochlea from '$lib/Cochlea.svelte';
 	import { labels } from '$lib/resume/labels.ts';
 	import { EXPORT_FORMATS, exportPath } from '$lib/resume/exports.ts';
-	import { isGroup, type Resume } from '$lib/resume/schema.ts';
+	import { isGroup, type Job, type Resume } from '$lib/resume/schema.ts';
 	import type { Locale } from '$lib/resume/schema.ts';
 
-	let { resume }: { resume: Resume } = $props();
+	let { resume, contacts }: { resume: Resume; contacts?: string } = $props();
 
 	const t = $derived(labels[resume.locale]);
+
+	/**
+	 * Phone and email are kept out of the server payload (see `getPageData`) and
+	 * decoded here, in the browser only. They stay hidden on screen and surface
+	 * in the print stylesheet, which is what the PDF export renders.
+	 */
+	let contact = $state<{ phone: string; email: string } | null>(null);
+	$effect(() => {
+		if (contacts) contact = JSON.parse(atob(contacts));
+	});
 
 	const icons = { linkedin: LinkedIn, github: Github, website: Mail };
 
@@ -22,6 +32,23 @@
 		window.location.href = localeHrefs[locale];
 	}
 </script>
+
+{#snippet jobEntry(job: Job)}
+	<div class="job">
+		<h3>
+			{job.org}{job.city ? `, ${job.city}` : ''}{job.note ? ` (${job.note})` : ''}
+		</h3>
+		<p>{job.role}</p>
+		<p class="date">{job.date}</p>
+		{#if job.highlights?.length}
+			<ul class="highlights">
+				{#each job.highlights as highlight (highlight)}
+					<li>{highlight}</li>
+				{/each}
+			</ul>
+		{/if}
+	</div>
+{/snippet}
 
 <div class="page">
 	<header>
@@ -47,14 +74,16 @@
 			<div class="personalInfos">
 				<h3>{t.personalInfos}</h3>
 				<div class="infos">
-					<div class="info">
-						<Phone />
-						<p>{resume.basics.phone}</p>
-					</div>
-					<a class="info" href="mailto:{resume.basics.email}">
-						<Mail />
-						<p>{resume.basics.email}</p>
-					</a>
+					{#if contact}
+						<div class="info private">
+							<Phone />
+							<p>{contact.phone}</p>
+						</div>
+						<div class="info private">
+							<Mail />
+							<p>{contact.email}</p>
+						</div>
+					{/if}
 					{#each resume.basics.profiles as profile (profile.url)}
 						{@const Icon = icons[profile.network]}
 						<a class="info" href={profile.url}>
@@ -90,25 +119,11 @@
 					{#if isGroup(entry)}
 						<div class="epoch">
 							{#each entry.group as job (job.org + job.date)}
-								<div class="job">
-									<h3>
-										{job.org}{job.city ? `, ${job.city}` : ''}{job.note ? ` (${job.note})` : ''}
-									</h3>
-									<p>{job.role}</p>
-									<p class="date">{job.date}</p>
-								</div>
+								{@render jobEntry(job)}
 							{/each}
 						</div>
 					{:else}
-						<div class="job">
-							<h3>
-								{entry.org}{entry.city ? `, ${entry.city}` : ''}{entry.note
-									? ` (${entry.note})`
-									: ''}
-							</h3>
-							<p>{entry.role}</p>
-							<p class="date">{entry.date}</p>
-						</div>
+						{@render jobEntry(entry)}
 					{/if}
 				{/each}
 			</div>
@@ -138,6 +153,20 @@
 			</div>
 		</section>
 
+		{#if resume.media.length}
+			<section class="publications">
+				<h2>{t.media}</h2>
+				<div class="entries">
+					{#each resume.media as item (item.url)}
+						<div class="pub">
+							<h3><a href={item.url}>{item.title}</a></h3>
+							<a class="source" href={item.url}>{item.source}</a>
+						</div>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
 		<section class="associations">
 			<h2>{t.associations}</h2>
 			<div class="entries">
@@ -145,6 +174,9 @@
 					<div class="asso">
 						<h3>{association.name}</h3>
 						<p>{association.role}</p>
+						{#if association.description}
+							<p class="detail">{association.description}</p>
+						{/if}
 						<a class="source" href={association.url}
 							>{association.url.replace(/^https?:\/\//, '')}</a
 						>
@@ -453,10 +485,45 @@
 		margin-top: var(--space-1);
 	}
 
+	/* Screen readers of the page never get the phone/email; the print stylesheet
+	   below reveals them, which is how they reach the PDF. */
+	.private {
+		display: none;
+	}
+
+	.highlights {
+		margin: var(--space-2) 0 0;
+		padding-left: 1.1em;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.highlights li {
+		font-size: 15px;
+		font-weight: 300;
+	}
+
+	.highlights li::marker {
+		color: var(--rule);
+	}
+
+	.detail {
+		color: var(--muted);
+		font-size: 15px;
+		margin-top: var(--space-1);
+	}
+
 	.epoch {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-4) var(--space-6);
+	}
+
+	/* Side-by-side only holds while the descriptions have room; below that the
+	   two parallel jobs stack. */
+	.epoch > .job {
+		flex: 1 1 300px;
 	}
 
 	.source {
@@ -474,6 +541,13 @@
 
 	.pub h3 a {
 		border-bottom: 1px solid transparent;
+	}
+
+	/* The full article title is long; on a phone it must wrap rather than push
+	   the page sideways. */
+	.pub h3 {
+		font-size: 17px;
+		overflow-wrap: anywhere;
 	}
 
 	.skills .entries,
@@ -549,7 +623,7 @@
 	/* ---------- print / PDF ---------- */
 
 	@media print {
-		/* Compact the layout so the resume lands on two pages. */
+		/* Compact the layout so the resume stays within three pages. */
 		:global(html) {
 			font-size: 11.5px;
 		}
@@ -646,9 +720,19 @@
 		.skill,
 		.lang,
 		.prog,
-		.summary {
+		.summary,
+		.highlights li,
+		.detail {
 			font-size: 11.5px;
 			line-height: 1.45;
+		}
+
+		.private {
+			display: flex;
+		}
+
+		.highlights {
+			margin-top: var(--space-1);
 		}
 
 		.date {

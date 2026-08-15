@@ -11,6 +11,7 @@ export type Labels = {
 	experiences: string;
 	formations: string;
 	publications: string;
+	media: string;
 	associations: string;
 	skills: string;
 	programming: string;
@@ -22,13 +23,14 @@ export type Labels = {
 export const labels: Record<Locale, Labels> = {
 	fr: {
 		htmlTitle: 'CV',
-		personalInfos: 'Infos Personelles',
+		personalInfos: 'Infos Personnelles',
 		experiences: 'EXPERIENCES',
 		formations: 'FORMATIONS',
 		publications: 'PUBLICATIONS & RECOMPENSES',
+		media: 'PRESSE',
 		associations: 'ASSOCIATION & PROJET',
 		skills: 'COMPETENCES',
-		programming: 'LANGUAGES',
+		programming: 'LANGAGES',
 		languages: 'LANGUES',
 		downloads: 'Télécharger',
 		otherLocale: 'English'
@@ -39,6 +41,7 @@ export const labels: Record<Locale, Labels> = {
 		experiences: 'EXPERIENCE',
 		formations: 'EDUCATION',
 		publications: 'PUBLICATIONS & AWARDS',
+		media: 'PRESS',
 		associations: 'ASSOCIATION & PROJECT',
 		skills: 'SKILLS',
 		programming: 'LANGUAGES',

@@ -9,4 +9,4 @@
 	<title>{data.resume.basics.name} — {labels[data.resume.locale].htmlTitle}</title>
 </svelte:head>
 
-<Cv resume={data.resume} />
+<Cv resume={data.resume} contacts={data.contacts} />
