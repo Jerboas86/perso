@@ -82,10 +82,10 @@ associations:
     role: Système audiométrique avancé
     url: 'https://www.astrone.app'
   - name: Audiology Arena
-    role: Evaluation platform for speech synthesis models
+    role: Plateforme d'évaluation pour modèles de synthèse vocale
     url: 'https://www.audarena.app'
   - name: Voxa
-    role: Speech corpus format
+    role: Format pour corpus de matériel vocal  
     url: 'https://github.com/Jerboas86/voxa'
 
 skills:
