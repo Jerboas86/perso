@@ -23,9 +23,9 @@ experiences:
     role: Fondateur & développeur
     date: janvier 2023 – aujourd’hui
     highlights:
-      - 'Plateforme d’audiométrie avancée qui donne accès à l’état de l’art des tests audiométriques, avec une liberté totale laissée au clinicien : chaque test est modifiable, et il peut composer les siens à partir de briques élémentaires, dans l’esprit d’un environnement de patch audio type Pure Data.'
-      - Conception, développement et exploitation de la totalité de l’application, en solo.
-      - 'Cœur technologique : un moteur audio temps réel bâti sur la Web Audio API, embarquant ses propres algorithmes de traitement du signal (spatialisation, réverbération).'
+      - 'Plateforme d’audiométrie avancée qui met l’état de l’art des tests à la portée du clinicien tout en lui laissant la main : chaque test est modifiable, et il compose les siens à partir de briques élémentaires, dans l’esprit d’un environnement de patch audio comme Pure Data.'
+      - Conception, développement et exploitation de l’application, seul et de bout en bout.
+      - 'Cœur technologique : un moteur audio temps réel bâti sur la Web Audio API, avec ses propres algorithmes de traitement du signal (spatialisation, réverbération).'
       - 'Stack : SvelteKit, Rust/WASM, PostgreSQL.'
       - 250 utilisateurs uniques par semaine.
   - org: Astrone
@@ -33,7 +33,7 @@ experiences:
     role: R&D et prototypage — genèse d’Astrone
     date: '2018–2022'
     highlights:
-      - Formalisation du besoin clinique, prototypage de la plateforme et autoformation au développement logiciel (TypeScript, Rust, traitement du signal audio), en parallèle d’une activité d’audioprothésiste en remplacement.
+      - Formalisation du besoin clinique, prototypage de la plateforme et autoformation au développement logiciel (TypeScript, Rust, traitement du signal audio), tout en exerçant comme audioprothésiste remplaçant.
   - org: Audika
     city: Lyon & Bourg-en-Bresse
     note: remplacements
@@ -46,14 +46,14 @@ experiences:
         date: '2013–2018'
         highlights:
           - Appareillage de l’adulte et de l’enfant, prise en charge des patients acouphéniques.
-          - 'Comité scientifique, périmètre France : formation des collègues du réseau et veille scientifique.'
+          - 'Comité scientifique, périmètre France : formation des audioprothésistes du réseau et veille bibliographique.'
       - org: CHU de Dijon, service ORL
         city: Dijon
         note: en parallèle, 2 jours par semaine
         role: Assistant recherche clinique
         date: '2015–2018'
         highlights:
-          - Conception du protocole de testing et de l’analyse statistique de l’étude sur le contrôle postural chez le patient implanté cochléaire, publiée dans Frontiers in Neurology (2018).
+          - Conception du protocole expérimental et de l’analyse statistique de l’étude sur le contrôle postural chez le patient implanté cochléaire, publiée dans Frontiers in Neurology (2018).
   - org: Alain Afflelou
     city: Vénissieux
     role: Opticien-optométriste
@@ -66,7 +66,7 @@ formations:
     date: '2015–2016'
   - title: Audioprothèse, Lyon — D.E.
     date: '2010–2013'
-  - title: Optométrie-Contactologie, Saint-Etienne — Licence
+  - title: Optométrie-Contactologie, Saint-Étienne — Licence
     date: '2009–2010'
   - title: Opticien-lunetier — B.T.S.
     date: '2007–2009'
@@ -78,8 +78,8 @@ publications:
   - title: Finaliste du WCA Innovation Prize (Astrone)
     source: World Congress of Audiology, Paris, sept. 2024
     url: 'https://web.archive.org/web/20240616085413mp_/https://wca2024paris.com/innovation-prize/'
-  - title: Prix de la meilleure présentation (C.N.A.)
-    source: Ouie magazine, 2014
+  - title: Prix de la meilleure présentation (Collège national d’audioprothèse)
+    source: Ouïe magazine, 2014
     url: 'https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/'
 
 media:
@@ -87,7 +87,7 @@ media:
     source: Audiologie demain, 2024
     url: 'https://audiologie-demain.com/astrone-la-nouvelle-plateforme-daudiometrie-avancee-2294'
   - title: Astrone, dans le cœur du réacteur audiométrique
-    source: Ouie magazine, 2024
+    source: Ouïe magazine, 2024
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
 associations:
@@ -97,18 +97,18 @@ associations:
     url: 'https://www.astrone.app'
   - name: Audiology Arena
     role: Plateforme d’évaluation pour modèles de synthèse vocale
-    description: Duels de modèles TTS sur un corpus propre à l’audiologie, pour juger leur qualité sur le cas d’usage audiométrique plutôt que sur des benchmarks généralistes.
+    description: Duels de modèles TTS sur un corpus propre à l’audiologie, pour les évaluer sur le cas d’usage audiométrique plutôt que sur des benchmarks généralistes.
     url: 'https://www.audarena.app'
   - name: Voxa
-    role: Format pour corpus de matériel vocal
-    description: Spécification d’un format de corpus vocal versionné, traçable et vérifiable (manifeste, métadonnées par échantillon, champs d’intégrité et de signature, métriques acoustiques reproductibles), en réponse à la multiplication des corpus générés par IA.
+    role: Format de corpus vocal
+    description: Spécification d’un format versionné, traçable et vérifiable (manifeste, métadonnées par échantillon, champs d’intégrité et de signature, métriques acoustiques reproductibles), en réponse à la multiplication des corpus générés par IA.
     url: 'https://github.com/Jerboas86/voxa'
   - name: Genlexis
     role: Générateur de listes lexicales
-    description: 'Chaîne de production de matériel vocal de haute qualité, combinant l’IA comme juge et le jugement humain : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d’entrer dans le corpus, d’où sont tirées les listes.'
+    description: 'Chaîne de production de matériel vocal de haute qualité, où l’IA fait office de juge et l’humain garde le dernier mot : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d’entrer dans le corpus d’où sont tirées les listes.'
     url: 'https://github.com/Jerboas86/genlexis'
   - name: F.N.E.A.
-    role: Cofondateur (2013), secrétaire puis membre honoraire
+    role: Fédération nationale des étudiants en audioprothèse — cofondateur (2013), secrétaire puis membre honoraire
     url: 'https://www.fnea.org'
 
 skills:
@@ -117,11 +117,11 @@ skills:
   - Recherche clinique & biostatistiques
   - Traitement du signal audio temps réel (Web Audio API, spatialisation, réverbération)
   - Développement web full-stack (SvelteKit, TypeScript, Rust/WASM, PostgreSQL)
-  - Data visualisation
+  - Visualisation de données
 
 programming: [TypeScript, JavaScript, Rust, Python]
 
 languages: [Français (langue maternelle), Anglais courant]
 ---
 
-Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour construire les outils qui me manquaient en cabinet. Je conçois et développe seul Astrone, une plateforme d’audiométrie avancée qui compte 250 utilisateurs uniques chaque semaine, dont le moteur audio temps réel est écrit de A à Z. Clinique, recherche et code sur le même sujet : l’audition.
+Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour construire les outils qui me manquaient en cabinet. Je conçois et développe seul Astrone, plateforme d’audiométrie avancée dont j’ai écrit le moteur audio temps réel de A à Z, et qui compte 250 utilisateurs uniques chaque semaine. Clinique, recherche et code sur le même sujet : l’audition.

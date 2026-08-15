@@ -23,8 +23,8 @@ experiences:
     role: Founder & developer
     date: January 2023 – present
     highlights:
-      - 'Advanced audiometry platform giving clinicians state-of-the-art tests with full control: every test can be modified, and new ones composed from building blocks, in the spirit of a Pure Data patching environment.'
-      - Design, development and operation of the entire application.
+      - 'Advanced audiometry platform that puts state-of-the-art tests within reach while leaving clinicians in control: every test can be modified, and new ones assembled from primitives, in the spirit of a Pure Data patching environment.'
+      - Sole designer, developer and operator of the entire application.
       - 'Technological core: a real-time audio engine built on the Web Audio API, with its own signal-processing algorithms (spatialisation, reverb).'
       - 'Stack: SvelteKit, Rust/WASM, PostgreSQL.'
       - 250 unique users per week.
@@ -33,7 +33,7 @@ experiences:
     role: R&D and prototyping — the genesis of Astrone
     date: '2018–2022'
     highlights:
-      - Framing of the clinical need, prototyping of the platform and self-taught software development (TypeScript, Rust, audio signal processing), alongside locum work as an audiologist.
+      - Framing of the clinical need, prototyping of the platform and a self-taught grounding in software development (TypeScript, Rust, audio signal processing), while working as a locum audiologist.
   - org: Audika
     city: Lyon & Bourg-en-Bresse
     note: locum
@@ -46,14 +46,14 @@ experiences:
         date: '2013–2018'
         highlights:
           - Hearing aid fitting for adults and children, tinnitus management.
-          - 'Scientific committee, nationwide scope: training the network’s clinicians and monitoring the literature.'
+          - 'Scientific committee, France-wide scope: training clinicians across the network and monitoring the literature.'
       - org: Dijon University Hospital, ENT department
         city: Dijon
         note: in parallel, 2 days a week
         role: Clinical research assistant
         date: '2015–2018'
         highlights:
-          - Design of the testing protocol and the statistical analysis of the study on postural control in cochlear implant users, published in Frontiers in Neurology (2018).
+          - Design of the experimental protocol and statistical analysis for the study on postural control in cochlear implant users, published in Frontiers in Neurology (2018).
   - org: Alain Afflelou
     city: Vénissieux
     role: Optician (optometry & contact lenses)
@@ -66,7 +66,7 @@ formations:
     date: '2015–2016'
   - title: Hearing Aid Audiology, Lyon — French State Diploma (D.E., 3-year professional degree)
     date: '2010–2013'
-  - title: Optometry & Contact Lenses, Saint-Etienne — Bachelor (Licence professionnelle, one-year specialisation)
+  - title: Optometry & Contact Lenses, Saint-Étienne — Bachelor (Licence professionnelle, one-year specialisation)
     date: '2009–2010'
   - title: Dispensing Optician — Advanced Technician Diploma (B.T.S., 2 years)
     date: '2007–2009'
@@ -79,7 +79,7 @@ publications:
     source: World Congress of Audiology, Paris, Sept. 2024
     url: 'https://web.archive.org/web/20240616085413mp_/https://wca2024paris.com/innovation-prize/'
   - title: Best presentation award (C.N.A., French national college of audiology)
-    source: Ouie magazine, 2014
+    source: Ouïe magazine, 2014
     url: 'https://www.ouiemagazine.net/2014/04/07/congres-des-audioprothesistes-yaniv-zini-prix-du-college-national-daudioprothese/'
 
 media:
@@ -87,7 +87,7 @@ media:
     source: Audiologie demain, 2024 (in French)
     url: 'https://audiologie-demain.com/astrone-la-nouvelle-plateforme-daudiometrie-avancee-2294'
   - title: 'Astrone, inside the audiometric reactor core'
-    source: Ouie magazine, 2024 (in French)
+    source: Ouïe magazine, 2024 (in French)
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
 associations:
@@ -97,15 +97,15 @@ associations:
     url: 'https://www.astrone.app'
   - name: Audiology Arena
     role: Evaluation platform for speech synthesis models
-    description: Head-to-head comparisons of TTS models on an audiology-specific corpus, judging them on the audiometric use case rather than on general-purpose benchmarks.
+    description: Head-to-head comparisons of TTS models on an audiology-specific corpus, to judge them on the audiometric use case rather than on general-purpose benchmarks.
     url: 'https://www.audarena.app'
   - name: Voxa
     role: Speech corpus format
-    description: A specification for versioned, traceable and verifiable speech corpora (manifest, per-sample metadata, integrity and signature fields, reproducible acoustic metrics), a response to the proliferation of AI-generated material.
+    description: A specification for versioned, traceable and verifiable speech corpora (manifest, per-sample metadata, integrity and signature fields, reproducible acoustic metrics), written in response to the proliferation of AI-generated material.
     url: 'https://github.com/Jerboas86/voxa'
   - name: Genlexis
     role: Word-list generator
-    description: 'A pipeline for producing high-quality speech material, combining LLM-as-a-judge with human judgement: every generated sentence is assessed for correctness, plausibility and appropriateness before entering the corpus the lists are drawn from.'
+    description: 'A pipeline for producing high-quality speech material, pairing LLM-as-a-judge with human validation: every generated sentence is assessed for correctness, plausibility and appropriateness before it enters the corpus the lists are drawn from.'
     url: 'https://github.com/Jerboas86/genlexis'
   - name: F.N.E.A.
     role: National federation of audiology students — cofounder (2013), secretary then honorary member
@@ -124,4 +124,4 @@ programming: [TypeScript, JavaScript, Rust, Python]
 languages: [French (native), English (fluent)]
 ---
 
-State-certified audiologist, trained in clinical research at Dijon University Hospital, who became a developer to build the tools I was missing in practice. I design and build Astrone single-handedly — an advanced audiometry platform with 250 unique users every week, whose real-time audio engine is written from the ground up. Clinical practice, research and code, all on the same subject: hearing.
+State-certified audiologist, trained in clinical research at Dijon University Hospital, who became a developer to build the tools missing from my own practice. I design and build Astrone single-handedly — an advanced audiometry platform whose real-time audio engine I wrote from the ground up, with 250 unique users every week. Clinical practice, research and code, all on the same subject: hearing.
