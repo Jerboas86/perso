@@ -576,7 +576,7 @@
 
 		.infos {
 			column-gap: var(--space-4);
-			row-gap: 0;
+			row-gap: var(--space-1);
 		}
 
 		.info p {
