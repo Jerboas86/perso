@@ -64,15 +64,20 @@
 					{/each}
 				</div>
 			</div>
-			<select class="localeSelect" value={resume.locale} onchange={onLocaleChange}>
+			<select
+				class="localeSelect"
+				aria-label={t.languageSelect}
+				value={resume.locale}
+				onchange={onLocaleChange}
+			>
 				<option value="fr">Français</option>
 				<option value="en">English</option>
 			</select>
 		</div>
 
 		<div class="meta">
-			<div class="personalInfos">
-				<h3>{t.personalInfos}</h3>
+			<div class="contact">
+				<h3>{t.contact}</h3>
 				<div class="infos">
 					{#if contact}
 						<div class="info private">
@@ -343,7 +348,7 @@
 		border-top: 1px solid var(--rule);
 	}
 
-	.personalInfos,
+	.contact,
 	.downloads {
 		display: flex;
 		flex-direction: column;

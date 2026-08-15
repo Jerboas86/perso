@@ -7,7 +7,9 @@ import type { Locale } from './schema.ts';
  */
 export type Labels = {
 	htmlTitle: string;
-	personalInfos: string;
+	/** Page description and og:description — kept short enough not to be truncated. */
+	metaDescription: string;
+	contact: string;
 	experiences: string;
 	formations: string;
 	publications: string;
@@ -17,36 +19,41 @@ export type Labels = {
 	programming: string;
 	languages: string;
 	downloads: string;
-	otherLocale: string;
+	/** Accessible name for the locale picker, which has no visible label. */
+	languageSelect: string;
 };
 
 export const labels: Record<Locale, Labels> = {
 	fr: {
 		htmlTitle: 'CV',
-		personalInfos: 'Infos Personnelles',
-		experiences: 'EXPERIENCES',
+		metaDescription:
+			'Audioprothésiste D.E. et développeur. Je conçois et développe seul Astrone, plateforme d’audiométrie avancée à moteur audio temps réel.',
+		contact: 'Coordonnées',
+		experiences: 'EXPÉRIENCES',
 		formations: 'FORMATIONS',
-		publications: 'PUBLICATIONS & RECOMPENSES',
+		publications: 'PUBLICATIONS & RÉCOMPENSES',
 		media: 'PRESSE',
-		associations: 'ASSOCIATION & PROJET',
-		skills: 'COMPETENCES',
+		associations: 'PROJETS & ASSOCIATIONS',
+		skills: 'COMPÉTENCES',
 		programming: 'LANGAGES',
 		languages: 'LANGUES',
 		downloads: 'Télécharger',
-		otherLocale: 'English'
+		languageSelect: 'Langue'
 	},
 	en: {
 		htmlTitle: 'Resume',
-		personalInfos: 'Personal Info',
+		metaDescription:
+			'Audiologist and developer. I design and build Astrone single-handedly — an advanced audiometry platform with a real-time audio engine.',
+		contact: 'Contact',
 		experiences: 'EXPERIENCE',
 		formations: 'EDUCATION',
 		publications: 'PUBLICATIONS & AWARDS',
 		media: 'PRESS',
-		associations: 'ASSOCIATION & PROJECT',
+		associations: 'PROJECTS & ASSOCIATIONS',
 		skills: 'SKILLS',
-		programming: 'LANGUAGES',
-		languages: 'SPOKEN LANGUAGES',
+		programming: 'PROGRAMMING',
+		languages: 'LANGUAGES',
 		downloads: 'Download',
-		otherLocale: 'Français'
+		languageSelect: 'Language'
 	}
 };

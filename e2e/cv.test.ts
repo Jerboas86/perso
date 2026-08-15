@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { EXPORT_FORMATS, exportPath } from '../src/lib/resume/exports.ts';
 
 const pages = [
-	{ path: '/', locale: 'fr' as const, heading: 'EXPERIENCES' },
+	{ path: '/', locale: 'fr' as const, heading: 'EXPÉRIENCES' },
 	{ path: '/en', locale: 'en' as const, heading: 'EXPERIENCE' }
 ];
 
@@ -24,10 +24,10 @@ for (const { path, locale, heading } of pages) {
 	});
 }
 
-test('language switch links the two resumes', async ({ page }) => {
+test('language switch moves between the two resumes', async ({ page }) => {
 	await page.goto('/');
-	await page.getByRole('link', { name: 'English' }).click();
+	await page.getByRole('combobox', { name: 'Langue' }).selectOption('en');
 	await expect(page).toHaveURL(/\/en$/);
-	await page.getByRole('link', { name: 'Français' }).click();
+	await page.getByRole('combobox', { name: 'Language' }).selectOption('fr');
 	await expect(page).toHaveURL(/\/$/);
 });

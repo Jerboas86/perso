@@ -1,12 +1,10 @@
 <script lang="ts">
 	import Cv from '$lib/Cv.svelte';
-	import { labels } from '$lib/resume/labels.ts';
+	import Head from '$lib/Head.svelte';
 
 	let { data } = $props();
 </script>
 
-<svelte:head>
-	<title>{data.resume.basics.name} — {labels[data.resume.locale].htmlTitle}</title>
-</svelte:head>
+<Head resume={data.resume} />
 
 <Cv resume={data.resume} contacts={data.contacts} />
