@@ -81,6 +81,12 @@ associations:
   - name: Astrone
     role: Advanced audiometric system
     url: 'https://www.astrone.app'
+  - name: Audiology Arena
+    role: Evaluation platform for speech synthesis models
+    url: 'https://www.audarena.app'
+  - name: Voxa
+    role: Speech corpus format
+    url: 'https://github.com/Jerboas86/voxa'
 
 skills:
   - Hearing aid fitting for adults & children
