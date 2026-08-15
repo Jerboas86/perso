@@ -3,6 +3,7 @@
 	import Github from '$lib/Github.svelte';
 	import LinkedIn from '$lib/LinkedIn.svelte';
 	import Mail from '$lib/Mail.svelte';
+	import Cochlea from '$lib/Cochlea.svelte';
 	import { labels } from '$lib/resume/labels.ts';
 	import { EXPORT_FORMATS, exportPath } from '$lib/resume/exports.ts';
 	import { isGroup, type Resume } from '$lib/resume/schema.ts';
@@ -26,7 +27,10 @@
 	<header>
 		<div class="identity">
 			<div class="name">
-				<h1>{resume.basics.name}</h1>
+				<div class="nameRow">
+					<Cochlea />
+					<h1>{resume.basics.name}</h1>
+				</div>
 				<div class="jobList">
 					{#each resume.basics.titles as title, i (title)}
 						<h2 class:slash={i < resume.basics.titles.length - 1}>{title}</h2>
@@ -244,6 +248,19 @@
 		align-items: flex-end;
 		justify-content: space-between;
 		gap: var(--space-4);
+	}
+
+	.nameRow {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	.nameRow :global(svg) {
+		flex: none;
+		width: 48px;
+		height: 48px;
+		color: var(--ink);
 	}
 
 	h1 {
@@ -492,6 +509,11 @@
 			line-height: 1.1;
 		}
 
+		.nameRow :global(svg) {
+			width: 32px;
+			height: 32px;
+		}
+
 		.jobList > h2 {
 			font-size: 16px;
 		}
@@ -512,6 +534,11 @@
 	@media screen and (max-width: 400px) {
 		h1 {
 			font-size: 32px;
+		}
+
+		.nameRow :global(svg) {
+			width: 26px;
+			height: 26px;
 		}
 
 		.jobList > h2 {
@@ -554,6 +581,11 @@
 
 		h1 {
 			font-size: 32px;
+		}
+
+		.nameRow :global(svg) {
+			width: 26px;
+			height: 26px;
 		}
 
 		.jobList {
