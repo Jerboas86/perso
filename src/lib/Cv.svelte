@@ -4,6 +4,7 @@
 	import LinkedIn from '$lib/LinkedIn.svelte';
 	import Mail from '$lib/Mail.svelte';
 	import Cochlea from '$lib/Cochlea.svelte';
+	import { reveal } from '$lib/reveal.ts';
 	import { labels } from '$lib/resume/labels.ts';
 	import { EXPORT_FORMATS, exportPath } from '$lib/resume/exports.ts';
 	import { isGroup, type Job, type Resume } from '$lib/resume/schema.ts';
@@ -117,7 +118,7 @@
 			<p class="summary">{resume.summary}</p>
 		{/if}
 
-		<section class="experiences">
+		<section class="experiences" use:reveal>
 			<h2>{t.experiences}</h2>
 			<div class="entries">
 				{#each resume.experiences as entry, i (i)}
@@ -134,7 +135,7 @@
 			</div>
 		</section>
 
-		<section class="formations">
+		<section class="formations" use:reveal>
 			<h2>{t.formations}</h2>
 			<div class="entries">
 				{#each resume.formations as formation (formation.title)}
@@ -159,7 +160,7 @@
 		</section>
 
 		{#if resume.media.length}
-			<section class="publications">
+			<section class="publications" use:reveal>
 				<h2>{t.media}</h2>
 				<div class="entries">
 					{#each resume.media as item (item.url)}
@@ -172,7 +173,7 @@
 			</section>
 		{/if}
 
-		<section class="associations">
+		<section class="associations" use:reveal>
 			<h2>{t.associations}</h2>
 			<div class="entries">
 				{#each resume.associations as association (association.name)}
@@ -190,7 +191,7 @@
 			</div>
 		</section>
 
-		<section class="skills">
+		<section class="skills" use:reveal>
 			<h2>{t.skills}</h2>
 			<div class="entries">
 				{#each resume.skills as skill (skill)}
@@ -199,14 +200,14 @@
 			</div>
 		</section>
 
-		<section class="progs">
+		<section class="progs" use:reveal>
 			<h2>{t.programming}</h2>
 			<div class="entries">
 				<p class="prog">{resume.programming.join('  ·  ')}</p>
 			</div>
 		</section>
 
-		<section class="langs">
+		<section class="langs" use:reveal>
 			<h2>{t.languages}</h2>
 			<div class="entries">
 				{#each resume.languages as language (language)}
@@ -451,6 +452,16 @@
 		gap: var(--space-4);
 		padding-top: var(--space-4);
 		border-top: 1px solid var(--hairline);
+		opacity: 0;
+		transform: translateX(24px);
+		transition:
+			opacity 350ms ease-out,
+			transform 350ms ease-out;
+	}
+
+	section:global(.is-visible) {
+		opacity: 1;
+		transform: translateX(0);
 	}
 
 	section > h2 {
@@ -631,6 +642,14 @@
 		/* Compact the layout so the resume stays within three pages. */
 		:global(html) {
 			font-size: 11.5px;
+		}
+
+		/* The scroll-reveal animation is screen-only; print (and the PDF
+		   export that renders it) must show every section immediately. */
+		section {
+			opacity: 1;
+			transform: none;
+			transition: none;
 		}
 
 		/* printBackground paints the body too, which would band the short last
