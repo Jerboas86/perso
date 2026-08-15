@@ -782,11 +782,5 @@
 		.asso {
 			break-inside: avoid;
 		}
-
-		/* Keep a section whole rather than leaving one entry stranded at the top
-		   of the next page. FORMATIONS is the one that straddles the break. */
-		.formations {
-			break-inside: avoid;
-		}
 	}
 </style>
