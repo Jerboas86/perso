@@ -28,7 +28,7 @@ export const EXPORT_FORMATS: ExportFormat[] = [
 export const EXPORT_DIR = 'exports';
 
 export function exportBasename(locale: Locale): string {
-	return `cv-${locale}`;
+	return `benoit_delemps_cv_${locale}`;
 }
 
 export function exportPath(locale: Locale, extension: string): string {
