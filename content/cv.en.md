@@ -40,6 +40,13 @@ experiences:
     note: locum
     role: Audiologist, French state diploma (D.E.)
     date: March 2022 – December 2022
+  - org: ISTR
+    city: Lyon
+    note: Institute of Rehabilitation Sciences and Techniques
+    role: Bioethics lecturer
+    date: '2017–2022'
+    highlights:
+      - Teaching bioethics to audiology students.
   - group:
       - org: Audika
         city: Dijon

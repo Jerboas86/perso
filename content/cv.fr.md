@@ -40,6 +40,13 @@ experiences:
     note: remplacements
     role: Audioprothésiste D.E.
     date: mars 2022 – décembre 2022
+  - org: ISTR
+    city: Lyon
+    note: Institut des sciences et techniques de la réadaptation
+    role: Professeur de bioéthique
+    date: '2017–2022'
+    highlights:
+      - Enseignement de la bioéthique aux étudiants en audioprothèse.
   - group:
       - org: Audika
         city: Dijon
