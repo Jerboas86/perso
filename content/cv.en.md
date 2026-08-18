@@ -22,19 +22,13 @@ experiences:
     city: Lyon
     note: SASU — sole-shareholder company
     role: Founder & developer
-    date: January 2023 – present
+    date: 2018 – present
     highlights:
       - 'Modular audiometry platform: clinicians run advanced tests out of the box, adapt them freely, or compose their own by assembling elementary audio building blocks — in the spirit of a patching environment like Pure Data.'
       - Sole designer, developer and operator of the entire application.
       - 'Technological core: a real-time audio engine built on the Web Audio API, with its own signal-processing algorithms (spatialisation, reverb).'
       - 'Stack: SvelteKit, Rust/WASM, PostgreSQL.'
       - 250 unique users per week.
-  - org: Astrone
-    city: Lyon
-    role: R&D and prototyping — the genesis of Astrone
-    date: '2018–2022'
-    highlights:
-      - Framing of the clinical need, prototyping of the platform and a self-taught grounding in software development (TypeScript, Rust, audio signal processing), while working as a locum audiologist.
   - org: Audika
     city: Lyon & Bourg-en-Bresse
     note: locum

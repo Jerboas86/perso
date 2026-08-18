@@ -22,7 +22,7 @@ experiences:
     city: Lyon
     note: SASU
     role: Fondateur & développeur
-    date: janvier 2023 – aujourd’hui
+    date: 2018 – aujourd’hui
     highlights:
       - "Plateforme d'audiométrie modulaire : le clinicien utilise des tests avancés prêts à l'emploi, les adapte librement, ou compose les siens en assemblant des briques audio élémentaires — dans l'esprit d'un environnement de patch comme Pure Data."
       - Conception, développement et exploitation de l’application, seul et de bout en bout.
