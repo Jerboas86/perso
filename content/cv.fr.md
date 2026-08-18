@@ -90,6 +90,50 @@ media:
     source: Ouïe magazine, 2024
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
+presentations:
+  - conference: 28èmes Assises de la Face et du Cou
+    date: '2026'
+    topic: IA générative en audiométrie
+    url: '/presentations/assises-cannes-2026.pdf'
+  - conference: 22èmes Assises de la Face et du Cou
+    date: '2020'
+    topic: Appareillage auditif et équilibre
+    presenters:
+      - Pr André Chays
+      - Dr Xavier Dubernard
+      - Benoit Delemps
+  - conference: 20èmes Assises de la Face et du Cou
+    date: '2018'
+    topic: Les perspectives en audiométrie
+    presenters:
+      - Pr Alexis Bozorg Grayeli
+      - Benoit Delemps
+  - conference: 50ème congrès de la SIO
+    date: '2017'
+    topic: Les appareillages difficiles - Étude de cas cliniques
+    presenters:
+      - Pr Alexis Bozorg Grayeli
+      - Benoit Delemps
+  - conference: IFOS
+    date: '2017'
+    topic: Counseling patients hearing aid and/or surgery
+    presenters:
+      - L. Cordero
+      - Pr B. Frachet
+      - M. Barbara
+      - Pr B. Fraysse
+      - J. Chiossone-Kerdel
+      - J. Lefeuvre
+      - Benoit Delemps
+  - conference: 17èmes Assises de la Face et du Cou
+    date: '2015'
+    topic: Indications et limites des moyens de réhabilitation. Controverse Audioprothésiste et ORL
+    presenters:
+      - Pr Alexis Bozorg Grayeli
+      - Dr Arnaud Devèze
+      - Vincent Krause
+      - Benoit Delemps
+
 projects:
   - name: Astrone
     role: Plateforme d’audiométrie avancée

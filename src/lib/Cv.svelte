@@ -173,6 +173,26 @@
 			</section>
 		{/if}
 
+		{#if resume.presentations.length}
+			<section class="presentations" use:reveal>
+				<h2>{t.presentations}</h2>
+				<div class="entries">
+					{#each resume.presentations as presentation (presentation.conference + presentation.date)}
+						<div class="talk">
+							<h3>{presentation.conference} <span class="inlineDate">{presentation.date}</span></h3>
+							<p>{presentation.topic}</p>
+							{#if presentation.presenters?.length}
+								<p class="detail">{presentation.presenters.join(', ')}</p>
+							{/if}
+							{#if presentation.url}
+								<a class="source" href={presentation.url} download>{t.downloads}</a>
+							{/if}
+						</div>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
 		<section class="associations" use:reveal>
 			<h2>{t.projects}</h2>
 			<div class="entries">
@@ -505,7 +525,8 @@
 
 	.job p,
 	.certif p,
-	.asso p {
+	.asso p,
+	.talk p {
 		font-size: 16px;
 		font-weight: 300;
 	}
@@ -515,6 +536,13 @@
 		font-size: 13px;
 		color: var(--muted);
 		margin-top: var(--space-1);
+	}
+
+	.inlineDate {
+		font-family: var(--mono);
+		font-size: 13px;
+		font-weight: 300;
+		color: var(--muted);
 	}
 
 	/* Screen readers of the page never get the phone/email; the print stylesheet
@@ -559,10 +587,15 @@
 	}
 
 	.source {
+		display: inline-block;
 		font-size: 14px;
 		color: var(--muted);
 		border-bottom: 1px solid var(--rule);
 		align-self: flex-start;
+	}
+
+	.talk .source {
+		margin-top: var(--space-1);
 	}
 
 	.source:hover,
@@ -754,9 +787,14 @@
 			line-height: 1.35;
 		}
 
+		.inlineDate {
+			font-size: 10px;
+		}
+
 		.job p,
 		.certif p,
 		.asso p,
+		.talk p,
 		.skill,
 		.lang,
 		.prog,
@@ -795,7 +833,8 @@
 		.job,
 		.certif,
 		.pub,
-		.asso {
+		.asso,
+		.talk {
 			break-inside: avoid;
 		}
 	}

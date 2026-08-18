@@ -44,6 +44,16 @@ const publicationSchema = z.object({
 	url: z.url()
 });
 
+const presentationSchema = z.object({
+	conference: z.string().min(1),
+	date: z.string().min(1),
+	topic: z.string().min(1),
+	/** Co-presenters, absent when presented solo. */
+	presenters: z.array(z.string().min(1)).optional(),
+	/** Absolute URL or a site-relative path to a downloadable file. */
+	url: z.string().min(1).optional()
+});
+
 const associationSchema = z.object({
 	name: z.string().min(1),
 	role: z.string().min(1),
@@ -62,6 +72,7 @@ export const resumeSchema = z.object({
 	publications: z.array(publicationSchema),
 	/** Press coverage. Same shape, but it is not a scientific record. */
 	media: z.array(publicationSchema).default([]),
+	presentations: z.array(presentationSchema).default([]),
 	projects: z.array(projectSchema),
 	associations: z.array(associationSchema),
 	skills: z.array(z.string().min(1)),

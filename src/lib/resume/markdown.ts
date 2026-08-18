@@ -54,6 +54,16 @@ export function toMarkdown(resume: Resume): string {
 		out.push('');
 	}
 
+	if (resume.presentations.length) {
+		out.push(`## ${t.presentations}`, '');
+		for (const p of resume.presentations) {
+			const head = p.url ? `[${p.conference}](${p.url})` : `**${p.conference}**`;
+			out.push(`- ${head} *(${p.date})* — ${p.topic}`);
+			if (p.presenters?.length) out.push(`  - ${p.presenters.join(', ')}`);
+		}
+		out.push('');
+	}
+
 	out.push(`## ${t.projects}`, '');
 	for (const p of resume.projects) {
 		out.push(`- **${p.name}** — ${p.role} — <${p.url}>`);

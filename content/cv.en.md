@@ -90,6 +90,50 @@ media:
     source: Ouïe magazine, 2024 (in French)
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
+presentations:
+  - conference: 28th Assises de la Face et du Cou
+    date: '2026'
+    topic: Generative AI in audiometry
+    url: '/presentations/assises-cannes-2026.pdf'
+  - conference: 22nd Assises de la Face et du Cou
+    date: '2020'
+    topic: Hearing aid fitting and balance
+    presenters:
+      - Prof. André Chays
+      - Dr Xavier Dubernard
+      - Benoit Delemps
+  - conference: 20th Assises de la Face et du Cou
+    date: '2018'
+    topic: Perspectives in audiometry
+    presenters:
+      - Prof. Alexis Bozorg Grayeli
+      - Benoit Delemps
+  - conference: 50th Congress of the SIO
+    date: '2017'
+    topic: Difficult hearing aid fittings - Clinical case studies
+    presenters:
+      - Prof. Alexis Bozorg Grayeli
+      - Benoit Delemps
+  - conference: IFOS
+    date: '2017'
+    topic: Counseling patients hearing aid and/or surgery
+    presenters:
+      - L. Cordero (Argentina) — Chairman
+      - B. Frachet (France) — Moderator
+      - M. Barbara (Italy)
+      - B. Fraysse (France)
+      - J. Chiossone-Kerdel (Venezuela)
+      - J. Lefeuvre (France)
+      - Benoit Delemps
+  - conference: 17th Assises de la Face et du Cou
+    date: '2015'
+    topic: 'Indications and limits of rehabilitation options: Audiologist vs. ENT debate'
+    presenters:
+      - Prof. Alexis Bozorg Grayeli — Dijon University Hospital, Head of ENT department
+      - Dr Arnaud Devèze — Marseille North Hospital, ENT department
+      - Vincent Krause — Audiologist, Compiègne / Beauvais
+      - Benoit Delemps — Audiologist, Dijon / Beaune
+
 projects:
   - name: Astrone
     role: Advanced audiometry platform

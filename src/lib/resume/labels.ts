@@ -14,6 +14,7 @@ export type Labels = {
 	formations: string;
 	publications: string;
 	media: string;
+	presentations: string;
 	projects: string;
 	associations: string;
 	skills: string;
@@ -34,6 +35,7 @@ export const labels: Record<Locale, Labels> = {
 		formations: 'FORMATIONS',
 		publications: 'PUBLICATIONS & RÉCOMPENSES',
 		media: 'PRESSE',
+		presentations: 'CONFÉRENCES',
 		projects: 'PROJETS',
 		associations: 'ASSOCIATIONS',
 		skills: 'COMPÉTENCES',
@@ -51,6 +53,7 @@ export const labels: Record<Locale, Labels> = {
 		formations: 'EDUCATION',
 		publications: 'PUBLICATIONS & AWARDS',
 		media: 'PRESS',
+		presentations: 'CONFERENCE TALKS',
 		projects: 'PROJECTS',
 		associations: 'ASSOCIATIONS',
 		skills: 'SKILLS',
