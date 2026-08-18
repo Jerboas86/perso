@@ -107,6 +107,9 @@ associations:
     role: Word-list generator
     description: 'A pipeline for producing high-quality speech material, pairing LLM-as-a-judge with human validation: every generated sentence is assessed for correctness, plausibility and appropriateness before it enters the corpus the lists are drawn from.'
     url: 'https://github.com/Jerboas86/genlexis'
+  - name: S.S.A
+    role: French Scientific Society of Audiology — full member
+    url: 'https://ssaudio.org/'
   - name: F.N.E.A.
     role: National federation of audiology students — cofounder (2013), secretary then honorary member
     url: 'https://www.fnea.org'

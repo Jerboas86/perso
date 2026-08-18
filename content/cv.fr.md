@@ -107,6 +107,9 @@ associations:
     role: Générateur de listes lexicales
     description: 'Chaîne de production de matériel vocal de haute qualité, où l’IA fait office de juge et l’humain garde le dernier mot : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d’entrer dans le corpus d’où sont tirées les listes.'
     url: 'https://github.com/Jerboas86/genlexis'
+  - name: S.S.A
+    role: Société Scientifique d'Audioprothèse — membre titulaire
+    url: 'https://ssaudio.org/'
   - name: F.N.E.A.
     role: Fédération nationale des étudiants en audioprothèse — cofondateur (2013), secrétaire puis membre honoraire
     url: 'https://www.fnea.org'
