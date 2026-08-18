@@ -12,6 +12,7 @@ const profileSchema = z.object({
 const basicsSchema = z.object({
 	name: z.string().min(1),
 	titles: z.array(z.string().min(1)).min(1),
+	city: z.string().min(1).optional(),
 	phone: z.string().min(1),
 	email: z.email(),
 	profiles: z.array(profileSchema)

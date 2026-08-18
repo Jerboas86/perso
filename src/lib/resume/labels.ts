@@ -10,6 +10,8 @@ export type Labels = {
 	/** Page description and og:description — kept short enough not to be truncated. */
 	metaDescription: string;
 	contact: string;
+	/** Heading for the profile links, kept apart from the contact details. */
+	profiles: string;
 	experiences: string;
 	formations: string;
 	publications: string;
@@ -31,6 +33,7 @@ export const labels: Record<Locale, Labels> = {
 		metaDescription:
 			'Audioprothésiste D.E. et développeur. Je conçois et développe seul Astrone, plateforme d’audiométrie avancée à moteur audio temps réel.',
 		contact: 'Coordonnées',
+		profiles: 'Réseaux',
 		experiences: 'EXPÉRIENCES',
 		formations: 'FORMATIONS',
 		publications: 'PUBLICATIONS & RÉCOMPENSES',
@@ -49,6 +52,7 @@ export const labels: Record<Locale, Labels> = {
 		metaDescription:
 			'Audiologist and developer. I design and build Astrone single-handedly — an advanced audiometry platform with a real-time audio engine.',
 		contact: 'Contact',
+		profiles: 'Profiles',
 		experiences: 'EXPERIENCE',
 		formations: 'EDUCATION',
 		publications: 'PUBLICATIONS & AWARDS',

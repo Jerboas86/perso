@@ -24,12 +24,18 @@ export function toMarkdown(resume: Resume): string {
 	out.push(`# ${basics.name}`, '');
 	out.push(basics.titles.join(' / '), '');
 
+	// Contact details and profile links stay on separate lines, mirroring the two
+	// blocks the page renders — a phone number and a LinkedIn URL are not the
+	// same kind of thing to a reader scanning the header.
 	const contacts = [
+		...(basics.city ? [basics.city] : []),
 		basics.phone,
-		`[${basics.email}](mailto:${basics.email})`,
-		...basics.profiles.map((p) => `[${p.label}](${p.url})`)
+		`[${basics.email}](mailto:${basics.email})`
 	];
 	out.push(contacts.join(' · '), '');
+	if (basics.profiles.length) {
+		out.push(basics.profiles.map((p) => `[${p.label}](${p.url})`).join(' · '), '');
+	}
 
 	if (resume.summary) out.push(resume.summary, '');
 

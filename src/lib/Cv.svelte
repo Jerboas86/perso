@@ -3,6 +3,7 @@
 	import Github from '$lib/Github.svelte';
 	import LinkedIn from '$lib/LinkedIn.svelte';
 	import Mail from '$lib/Mail.svelte';
+	import Pin from '$lib/Pin.svelte';
 	import Cochlea from '$lib/Cochlea.svelte';
 	import { reveal } from '$lib/reveal.ts';
 	import { labels } from '$lib/resume/labels.ts';
@@ -80,6 +81,12 @@
 			<div class="contact">
 				<h3>{t.contact}</h3>
 				<div class="infos">
+					{#if resume.basics.city}
+						<div class="info">
+							<Pin />
+							<p>{resume.basics.city}</p>
+						</div>
+					{/if}
 					{#if contact}
 						<div class="info private">
 							<Phone />
@@ -90,6 +97,12 @@
 							<p>{contact.email}</p>
 						</div>
 					{/if}
+				</div>
+			</div>
+
+			<div class="profiles">
+				<h3>{t.profiles}</h3>
+				<div class="infos">
 					{#each resume.basics.profiles as profile (profile.url)}
 						{@const Icon = icons[profile.network]}
 						<a class="info" href={profile.url}>
@@ -386,6 +399,7 @@
 	}
 
 	.contact,
+	.profiles,
 	.downloads {
 		display: flex;
 		flex-direction: column;
