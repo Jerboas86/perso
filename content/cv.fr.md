@@ -3,7 +3,8 @@ locale: fr
 basics:
   name: Benoit Delemps
   titles: [Audioprothésiste D.E., Développeur, Créateur d’Astrone]
-  phone: '06-65-50-72-46'
+  city: Lyon
+  phone: '06 65 50 72 46'
   email: benoitdelemps@protonmail.com
   profiles:
     - network: linkedin
@@ -164,6 +165,7 @@ skills:
   - Appareillage de l’adulte & de l’enfant
   - Prise en charge des patients acouphéniques
   - Recherche clinique & biostatistiques
+  - Cadre réglementaire des logiciels de santé (RGPD, MDR)
   - Traitement du signal audio temps réel (Web Audio API, spatialisation, réverbération)
   - Développement web full-stack (SvelteKit, TypeScript, Rust/WASM, PostgreSQL)
   - Visualisation de données

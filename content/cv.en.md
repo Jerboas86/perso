@@ -3,7 +3,8 @@ locale: en
 basics:
   name: Benoit Delemps
   titles: [Audiologist, Developer, Creator of Astrone]
-  phone: '06-65-50-72-46'
+  city: Lyon, France
+  phone: '+33 6 65 50 72 46'
   email: benoitdelemps@protonmail.com
   profiles:
     - network: linkedin
@@ -118,21 +119,21 @@ presentations:
     date: '2017'
     topic: Counseling patients hearing aid and/or surgery
     presenters:
-      - L. Cordero (Argentina) — Chairman
-      - B. Frachet (France) — Moderator
-      - M. Barbara (Italy)
-      - B. Fraysse (France)
-      - J. Chiossone-Kerdel (Venezuela)
-      - J. Lefeuvre (France)
+      - L. Cordero
+      - Prof. B. Frachet
+      - M. Barbara
+      - Prof. B. Fraysse
+      - J. Chiossone-Kerdel
+      - J. Lefeuvre
       - Benoit Delemps
   - conference: 17th Assises de la Face et du Cou
     date: '2015'
     topic: 'Indications and limits of rehabilitation options: Audiologist vs. ENT debate'
     presenters:
-      - Prof. Alexis Bozorg Grayeli — Dijon University Hospital, Head of ENT department
-      - Dr Arnaud Devèze — Marseille North Hospital, ENT department
-      - Vincent Krause — Audiologist, Compiègne / Beauvais
-      - Benoit Delemps — Audiologist, Dijon / Beaune
+      - Prof. Alexis Bozorg Grayeli
+      - Dr Arnaud Devèze
+      - Vincent Krause
+      - Benoit Delemps
 
 projects:
   - name: Astrone
@@ -164,6 +165,7 @@ skills:
   - Hearing aid fitting for adults & children
   - Tinnitus management
   - Clinical research & biostatistics
+  - Regulatory framework for health software (GDPR, EU MDR)
   - Real-time audio signal processing (Web Audio API, spatialisation, reverb)
   - Full-stack web development (SvelteKit, TypeScript, Rust/WASM, PostgreSQL)
   - Data visualisation
