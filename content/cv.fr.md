@@ -24,7 +24,7 @@ experiences:
     role: Fondateur & développeur
     date: janvier 2023 – aujourd’hui
     highlights:
-      - 'Plateforme d’audiométrie avancée qui met l’état de l’art des tests à la portée du clinicien tout en lui laissant la main : chaque test est modifiable, et il compose les siens à partir de briques élémentaires, dans l’esprit d’un environnement de patch audio comme Pure Data.'
+      - "Plateforme d'audiométrie modulaire : le clinicien utilise des tests avancés prêts à l'emploi, les adapte librement, ou compose les siens en assemblant des briques audio élémentaires — dans l'esprit d'un environnement de patch comme Pure Data."
       - Conception, développement et exploitation de l’application, seul et de bout en bout.
       - 'Cœur technologique : un moteur audio temps réel bâti sur la Web Audio API, avec ses propres algorithmes de traitement du signal (spatialisation, réverbération).'
       - 'Stack : SvelteKit, Rust/WASM, PostgreSQL.'
@@ -54,14 +54,14 @@ experiences:
         date: '2013–2018'
         highlights:
           - Appareillage de l’adulte et de l’enfant, prise en charge des patients acouphéniques.
-          - 'Comité scientifique, périmètre France : formation des audioprothésistes du réseau et veille bibliographique.'
+          - 'Comité scientifique, périmètre France : formation des audioprothésistes du réseau, conseil technique, veille bibliographique et technologique.'
       - org: CHU de Dijon, service ORL
         city: Dijon
         note: en parallèle, 2 jours par semaine
         role: Assistant recherche clinique
         date: '2015–2018'
         highlights:
-          - Conception du protocole expérimental et de l’analyse statistique de l’étude sur le contrôle postural chez le patient implanté cochléaire, publiée dans Frontiers in Neurology (2018).
+          - "Support méthodologique et technique de plusieurs études cliniques : conception de dispositifs embarqués, et de l'analyse statistique (Frontiers in Neurology, 2018)."
   - org: Alain Afflelou
     city: Vénissieux
     role: Opticien-optométriste
@@ -157,8 +157,8 @@ projects:
     url: 'https://github.com/Jerboas86/voxa'
   - name: Genlexis
     role: Générateur de listes lexicales
-    description: 'Chaîne de production de matériel vocal de haute qualité, où l’IA fait office de juge et l’humain garde le dernier mot : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d’entrer dans le corpus d’où sont tirées les listes.'
-    url: 'https://github.com/Jerboas86/genlexis'
+    description: "Générateur de matériel vocal où l'IA fait office de juge et l'humain garde le dernier mot : chaque phrase générée doit être sémantiquement juste, syntaxiquement correcte et sans contenu inapproprié pour entrer dans le corpus qui alimente les listes de test."
+    url: 'https://genlexis.com/'
 
 associations:
   - name: S.S.A
@@ -182,4 +182,4 @@ programming: [TypeScript, JavaScript, Rust, Python]
 languages: [Français (langue maternelle), Anglais courant]
 ---
 
-Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour construire les outils qui me manquaient en cabinet. Je conçois et développe seul Astrone, plateforme d’audiométrie avancée dont j’ai écrit le moteur audio temps réel de A à Z, et qui compte 250 utilisateurs uniques chaque semaine. Clinique, recherche et code sur le même sujet : l’audition.
+Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour bâtir les outils qui me manquaient en cabinet. Je conçois et développe seul Astrone, plateforme d'audiométrie avancée dont j'ai écrit intégralement le moteur audio temps réel. Elle réunit aujourd'hui 250 utilisateurs chaque semaine. Clinique, recherche et code au service d'un même sujet : l'audition.

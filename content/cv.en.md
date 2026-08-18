@@ -24,7 +24,7 @@ experiences:
     role: Founder & developer
     date: January 2023 – present
     highlights:
-      - 'Advanced audiometry platform that puts state-of-the-art tests within reach while leaving clinicians in control: every test can be modified, and new ones assembled from primitives, in the spirit of a Pure Data patching environment.'
+      - 'Modular audiometry platform: clinicians run advanced tests out of the box, adapt them freely, or compose their own by assembling elementary audio building blocks — in the spirit of a patching environment like Pure Data.'
       - Sole designer, developer and operator of the entire application.
       - 'Technological core: a real-time audio engine built on the Web Audio API, with its own signal-processing algorithms (spatialisation, reverb).'
       - 'Stack: SvelteKit, Rust/WASM, PostgreSQL.'
@@ -54,14 +54,14 @@ experiences:
         date: '2013–2018'
         highlights:
           - Hearing aid fitting for adults and children, tinnitus management.
-          - 'Scientific committee, France-wide scope: training clinicians across the network and monitoring the literature.'
+          - 'Scientific committee, France-wide scope: training clinicians across the network, technical advice, and monitoring the literature and technology.'
       - org: Dijon University Hospital, ENT department
         city: Dijon
         note: in parallel, 2 days a week
         role: Clinical research assistant
         date: '2015–2018'
         highlights:
-          - Design of the experimental protocol and statistical analysis for the study on postural control in cochlear implant users, published in Frontiers in Neurology (2018).
+          - 'Methodological and technical support for several clinical studies: design of embedded devices and of the statistical analysis (Frontiers in Neurology, 2018).'
   - org: Alain Afflelou
     city: Vénissieux
     role: Optician (optometry & contact lenses)
@@ -157,8 +157,8 @@ projects:
     url: 'https://github.com/Jerboas86/voxa'
   - name: Genlexis
     role: Word-list generator
-    description: 'A pipeline for producing high-quality speech material, pairing LLM-as-a-judge with human validation: every generated sentence is assessed for correctness, plausibility and appropriateness before it enters the corpus the lists are drawn from.'
-    url: 'https://github.com/Jerboas86/genlexis'
+    description: 'A speech material generator pairing LLM-as-a-judge with human final say: every generated sentence must be semantically sound, syntactically correct and free of inappropriate content before it enters the corpus feeding the test lists.'
+    url: 'https://genlexis.com/'
 
 associations:
   - name: S.S.A
@@ -182,4 +182,4 @@ programming: [TypeScript, JavaScript, Rust, Python]
 languages: [French (native), English (fluent)]
 ---
 
-State-certified audiologist, trained in clinical research at Dijon University Hospital, who became a developer to build the tools missing from my own practice. I design and build Astrone single-handedly — an advanced audiometry platform whose real-time audio engine I wrote from the ground up, with 250 unique users every week. Clinical practice, research and code, all on the same subject: hearing.
+State-certified audiologist, trained in clinical research at Dijon University Hospital, who became a developer to build the tools missing from my own practice. I design and build Astrone single-handedly — an advanced audiometry platform whose real-time audio engine I wrote entirely myself. It now brings together 250 users every week. Clinical practice, research and code, all serving one subject: hearing.
