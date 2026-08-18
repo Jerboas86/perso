@@ -51,6 +51,8 @@ const associationSchema = z.object({
 	url: z.url()
 });
 
+const projectSchema = associationSchema;
+
 export const resumeSchema = z.object({
 	locale: localeSchema,
 	basics: basicsSchema,
@@ -60,6 +62,7 @@ export const resumeSchema = z.object({
 	publications: z.array(publicationSchema),
 	/** Press coverage. Same shape, but it is not a scientific record. */
 	media: z.array(publicationSchema).default([]),
+	projects: z.array(projectSchema),
 	associations: z.array(associationSchema),
 	skills: z.array(z.string().min(1)),
 	programming: z.array(z.string().min(1)),

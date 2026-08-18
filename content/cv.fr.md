@@ -90,7 +90,7 @@ media:
     source: Ouïe magazine, 2024
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
-associations:
+projects:
   - name: Astrone
     role: Plateforme d’audiométrie avancée
     description: 'Un environnement de patch pour l’audiométrie : plutôt que de choisir dans un catalogue figé, le clinicien assemble lui-même ses tests.'
@@ -107,6 +107,8 @@ associations:
     role: Générateur de listes lexicales
     description: 'Chaîne de production de matériel vocal de haute qualité, où l’IA fait office de juge et l’humain garde le dernier mot : chaque phrase générée est évaluée sur sa correction, sa plausibilité et sa pertinence avant d’entrer dans le corpus d’où sont tirées les listes.'
     url: 'https://github.com/Jerboas86/genlexis'
+
+associations:
   - name: S.S.A
     role: Société Scientifique d'Audioprothèse — membre titulaire
     url: 'https://ssaudio.org/'

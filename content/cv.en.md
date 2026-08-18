@@ -90,7 +90,7 @@ media:
     source: Ouïe magazine, 2024 (in French)
     url: 'https://www.ouiemagazine.net/2024/04/18/astrone-coeur-reacteur-audiometrique/'
 
-associations:
+projects:
   - name: Astrone
     role: Advanced audiometry platform
     description: 'A patching environment for audiometry: rather than picking from a fixed catalogue of tests, clinicians assemble their own from primitives.'
@@ -107,6 +107,8 @@ associations:
     role: Word-list generator
     description: 'A pipeline for producing high-quality speech material, pairing LLM-as-a-judge with human validation: every generated sentence is assessed for correctness, plausibility and appropriateness before it enters the corpus the lists are drawn from.'
     url: 'https://github.com/Jerboas86/genlexis'
+
+associations:
   - name: S.S.A
     role: French Scientific Society of Audiology — full member
     url: 'https://ssaudio.org/'

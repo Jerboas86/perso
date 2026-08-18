@@ -174,6 +174,22 @@
 		{/if}
 
 		<section class="associations" use:reveal>
+			<h2>{t.projects}</h2>
+			<div class="entries">
+				{#each resume.projects as project (project.name)}
+					<div class="asso">
+						<h3>{project.name}</h3>
+						<p>{project.role}</p>
+						{#if project.description}
+							<p class="detail">{project.description}</p>
+						{/if}
+						<a class="source" href={project.url}>{project.url.replace(/^https?:\/\//, '')}</a>
+					</div>
+				{/each}
+			</div>
+		</section>
+
+		<section class="associations" use:reveal>
 			<h2>{t.associations}</h2>
 			<div class="entries">
 				{#each resume.associations as association (association.name)}

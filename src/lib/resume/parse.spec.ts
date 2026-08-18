@@ -31,7 +31,14 @@ describe('toMarkdown', () => {
 		const t = labels[locale];
 
 		expect(markdown.startsWith(`# ${resume.basics.name}`)).toBe(true);
-		for (const heading of [t.experiences, t.formations, t.publications, t.associations, t.skills]) {
+		for (const heading of [
+			t.experiences,
+			t.formations,
+			t.publications,
+			t.projects,
+			t.associations,
+			t.skills
+		]) {
 			expect(markdown).toContain(`## ${heading}`);
 		}
 		// Grouped experiences are flattened into individual entries.

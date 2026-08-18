@@ -54,6 +54,13 @@ export function toMarkdown(resume: Resume): string {
 		out.push('');
 	}
 
+	out.push(`## ${t.projects}`, '');
+	for (const p of resume.projects) {
+		out.push(`- **${p.name}** — ${p.role} — <${p.url}>`);
+		if (p.description) out.push(`  - ${p.description}`);
+	}
+	out.push('');
+
 	out.push(`## ${t.associations}`, '');
 	for (const a of resume.associations) {
 		out.push(`- **${a.name}** — ${a.role} — <${a.url}>`);
