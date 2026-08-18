@@ -182,4 +182,4 @@ programming: [TypeScript, JavaScript, Rust, Python]
 languages: [Français (langue maternelle), Anglais courant]
 ---
 
-Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour bâtir les outils qui me manquaient en cabinet. Je conçois et développe seul Astrone, plateforme d'audiométrie avancée dont j'ai écrit intégralement le moteur audio temps réel. Elle réunit aujourd'hui 250 utilisateurs chaque semaine. Clinique, recherche et code au service d'un même sujet : l'audition.
+Audioprothésiste D.E. formé à la recherche clinique au CHU de Dijon, devenu développeur pour bâtir les outils qui me manquaient en centre. Je conçois et développe seul Astrone, plateforme d'audiométrie avancée dont j'ai écrit intégralement le moteur audio temps réel. Elle réunit aujourd'hui 250 utilisateurs chaque semaine. Clinique, recherche et code au service d'un même sujet : l'audition.
